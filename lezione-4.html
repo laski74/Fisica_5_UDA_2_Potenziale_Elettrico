@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="it">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fisica · Campo elettrico e potenziale · L4 · Una mappa dei volt</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23184939'/%3E%3Cpath d='M23 14v36m18-36v36M6 32h17m18 0h17' stroke='%23daf7e5' stroke-width='5'/%3E%3Cpath d='M9 12h10m-5-5v10m32 0h10' stroke='%23ffc282' stroke-width='3'/%3E%3C/svg%3E"><link rel="stylesheet" href="stile.css"><script>window.MathJax={options:{enableMenu:false}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="interazioni.js"></script><script defer src="simulazioni.js"></script>
+
+</head>
+<body class="student study-edition inner-page"><a href="#contenuto" class="skip">Vai al contenuto</a>
+<header class="hero">
+<div class="wrap hero-layout">
+<div>
+<p class="meta">LICEO MONTI DI CHIERI · A.S. 2026–27 · FISICA</p>
+<h1>Campo elettrico e potenziale</h1>
+<p data-class-label>5CLL · Liceo linguistico</p>
+<p>LIM e studio · UDA 2 · Sei lezioni di 55 minuti</p>
+</div><svg class="hero-diagram" viewBox="0 0 370 184" role="img" aria-label="Schema di un dipolo con linee del campo orientate dalla carica positiva alla negativa."><defs><pattern id="quadro" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M 24 0 H 0 V 24" fill="none" stroke="#7bbca5" stroke-opacity=".22"/></pattern><marker id="arrow-hero" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 0 10 z" fill="#a3e9ce"/></marker></defs><rect width="370" height="184" rx="16" fill="url(#quadro)"/><g fill="none" stroke="#a3e9ce" stroke-width="1.7"><path d="M89 73 C138 15 230 15 281 73" stroke-opacity=".95"/><path d="M89 83 C145 56 225 56 281 83"/><path d="M89 92 H281"/><path d="M89 101 C145 128 225 128 281 101"/><path d="M89 111 C138 169 230 169 281 111" stroke-opacity=".95"/><path d="M166 29 H195 M166 63 H195 M166 92 H195 M166 121 H195 M166 155 H195" marker-end="url(#arrow-hero)" fill="none"/></g><circle cx="75" cy="92" r="25" fill="#ffc689"/><circle cx="295" cy="92" r="25" fill="#a7d9f4"/><path d="M64 92h22 M75 81v22 M284 92h22" fill="none" stroke="#163a32" stroke-width="4" stroke-linecap="round"/></svg>
+</div>
+</header>
+<div class="dock">
+<div class="wrap">
+<nav class="nav" aria-label="Indice dell’UDA"><a href="index.html">La rotta</a><a href="lezione-1.html">L1</a><a href="lezione-2.html">L2</a><a href="lezione-3.html">L3</a><a href="lezione-4.html" aria-current="page">L4</a><a href="lezione-5.html">L5</a><a href="lezione-6.html">L6</a><a href="esercizi.html">Esercizi</a><a href="mappa.html">Mappa</a><a href="formule.html">Formule</a><a href="facoltativi.html">Facoltativi</a><a href="autoverifica.html">Autoverifica</a></nav>
+<div class="tools"><label>Classe <select id="classe"><option>5CLL</option><option>5DSU</option></select></label><button id="dsa" type="button" aria-pressed="false">DSA/BES</button><button type="button" data-details="hint" data-label="aiuti">Apri aiuti</button><button type="button" data-details="solution" data-label="soluzioni">Apri soluzioni</button><button id="dark" type="button" aria-pressed="false">Tema DARK</button><button id="print" type="button">Stampa la lezione</button><a href="consegne.html">Tutte le consegne</a>
+</div>
+</div>
+</div>
+<main id="contenuto" class="wrap">
+<div class="print-title">Fisica · Campo elettrico e potenziale</div>
+<p class="print-title" data-class-label>5CLL · Liceo linguistico</p>
+<section class="sheet lesson" id="lezione-4">
+<header class="lesson-heading"><p class="kicker">Lezione 4</p>
+<h2>Una mappa dei volt</h2>
+<p class="goal">Potenziale, differenza di potenziale, equipotenziali · Passare dal potenziale al lavoro e leggere direzione e intensità del campo da una mappa.</p></header>
+<div class="screen">
+<div class="question">
+<h3>Prima di calcolare</h3>
+<p>Su una mappa quotata, camminare lungo una curva di livello è un po’ come muovere una carica su un’equipotenziale. Che cosa rimane costante? Quali frecce disegneresti sulla mappa?</p><label class="screen">Al centro fra due sorgenti opposte dello stesso modulo prevedi separatamente il segno di V e il verso di E.<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</div>
+<h3>Esplora il modello</h3>
+<div class="lab screen" data-lab="potenziale">
+<h4>Cartografia dei volt</h4>
+<p>Confronta il dipolo con due cariche positive. Leggi V ed E nel punto P. Sposta P lungo l’asse verticale passante per il centro nel caso del dipolo. Che cosa succede a V? Osserva le frecce rispetto alle curve.</p>
+<form><label>Sorgenti <select name="sorgenti"><option value="dipole">Dipolo</option><option value="equal">Due positive</option><option value="one">Una positiva</option></select></label><label>Ascissa di P (m) <input name="x" type="range" min="-1.2" max="1.2" step="0.05" value="0"> <span class="range-value" aria-hidden="true">0</span></label><label>Ordinata di P (m) <input name="y" type="range" min="-0.55" max="0.55" step="0.05" value="0.25"> <span class="range-value" aria-hidden="true">0.25</span></label><button type="reset">Ripristina valori</button>
+</form><svg viewBox="0 0 660 300" role="img" aria-label="Curve equipotenziali e vettori di campo"></svg><output aria-live="polite"></output>
+<p class="book">Curve a potenziale negativo tratteggiate in blu, positive in arancio, curva a zero più spessa. I vettori del campo sono in verde e la freccia più spessa indica E in P.</p><noscript>Per interagire con il modello abilita JavaScript.</noscript>
+</div>
+<h3 id="teoria-4">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 18 · pp. 46–48 potenziale, differenza di potenziale ed elettronvolt; pp. 49–50 potenziale di cariche puntiformi; pp. 50–51 equipotenziali.</span><span class="theory-aside">Facoltativi · pp. 52–53 (esempio 5) dal potenziale al campo; pp. 53–54 circuitazione.</span>
+</p>
+<div class="theory-expanded">
+<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/46.png">p. 46 · Potenziale e differenza di potenziale</a> · p. 49 · Potenziale di cariche puntiformi · <a target="_blank" rel="noopener" href="immagini/51.png">p. 51 · Equipotenziali e dipolo</a> · <a target="_blank" rel="noopener" href="immagini/52.png">p. 52 · Campo e differenza di potenziale</a>
+</p>
+<section class="theory-cycle">
+<h4>Potenziale, differenza di potenziale ed energia</h4>
+<p>Il <strong>potenziale in P</strong> è l’energia potenziale per unità di carica di prova in P, <mark class="key-term">fissato uno zero</mark>. È uno scalare del campo delle sorgenti. Cambiare la carica di prova cambia U in proporzione e lascia V invariato. Se aggiungi la stessa costante a tutti i potenziali, ogni differenza resta uguale.</p>
+<p>La <strong>differenza di potenziale da A a B</strong> è il <mark class="key-term">valore in B meno quello in A</mark>. Dice quanta energia potenziale acquista un coulomb di carica positiva. Per risalire al lavoro del campo si cambia segno. Con carica negativa, una differenza di potenziale positiva corrisponde invece a una diminuzione di U.</p>
+<div class="equation-grid">
+<div class="equation-tile"><math display="block"><mi>V</mi><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mi>U</mi><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow><msub><mi>q</mi><mn>0</mn></msub></mfrac></math>
+<p>Potenziale in volt, o joule per coulomb. U riguarda la carica di prova nelle sorgenti fissate.</p>
+</div>
+<div class="equation-tile"><math display="block"><mrow><mi>Δ</mi><mi>V</mi></mrow><mo>=</mo><msub><mi>V</mi><mi>B</mi></msub><mo>−</mo><msub><mi>V</mi><mi>A</mi></msub><mo>=</mo><mo>−</mo><mfrac><msub><mi>W</mi><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></msub><msub><mi>q</mi><mn>0</mn></msub></mfrac></math>
+<p>Differenza finale meno iniziale. Vale per ogni cammino elettrostatico fra A e B.</p>
+</div>
+<div class="equation-tile"><math display="block"><mrow><mi>Δ</mi><mi>U</mi></mrow><mo>=</mo><msub><mi>q</mi><mn>0</mn></msub><mrow><mi>Δ</mi><mi>V</mi></mrow></math>
+<p>Per passare da volt a joule moltiplica per la carica in coulomb, con segno.</p>
+</div>
+<div class="equation-tile"><math display="block"><msub><mi>W</mi><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></msub><mo>=</mo><msub><mi>q</mi><mn>0</mn></msub><mrow><mo>(</mo><msub><mi>V</mi><mi>A</mi></msub><mo>−</mo><msub><mi>V</mi><mi>B</mi></msub><mo>)</mo></mrow></math>
+<p>Il campo fa lavoro positivo quando la carica diminuisce la propria energia potenziale.</p>
+</div>
+</div>
+</section>
+<section class="theory-cycle">
+<h4>Calcolare V da una o più cariche</h4>
+<p>Una sorgente puntiforme nel vuoto produce V = kQ/r scegliendo lo zero all’infinito. Qui il segno di Q rimane nel numeratore. A parità di r, una carica doppia dà un potenziale doppio. A parità di Q, un raggio doppio dimezza il potenziale in valore assoluto.</p>
+<p>Con più sorgenti, calcola una r per ciascuna e <mark class="key-term">somma i termini con segno</mark>. E e V possono annullarsi in punti diversi. Nel punto medio di un dipolo simmetrico V = 0, mentre E punta verso la carica negativa. Nel punto medio di due positive identiche E = 0, mentre V è positivo.</p>
+<div class="equation-grid">
+<div class="equation-tile"><math display="block"><mi>V</mi><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow><mo>=</mo><mi>k</mi><mfrac><mi>Q</mi><mi>r</mi></mfrac></math>
+<p>Una sorgente puntiforme nel vuoto. Conserva il segno di Q e scegli V nullo all’infinito.</p>
+</div>
+<div class="equation-tile"><math display="block"><msub><mi><mi>V</mi></mi><mtext>tot</mtext></msub><mo>=</mo><msub><mi>V</mi><mi>1</mi></msub><mo>+</mo><msub><mi>V</mi><mi>2</mi></msub><mo>+</mo><mo>…</mo></math>
+<p>Potenziale totale nel punto P. Somma <mark class="key-term">scalare</mark>, con lo stesso riferimento per tutti i contributi.</p>
+</div>
+</div>
+</section>
+<section class="theory-cycle">
+<h4>Leggere le equipotenziali</h4>
+<p>Una <strong>superficie equipotenziale</strong> contiene punti con lo stesso V. Su carta vediamo le sue intersezioni con il piano, cioè le curve di livello. Due punti sulla stessa equipotenziale hanno ΔV = 0 e il lavoro del campo da uno all’altro è zero. Dove E è non nullo, la freccia del campo è <mark class="key-term">perpendicolare alla superficie</mark> e punta verso i valori minori. Una carica negativa subisce una forza in verso opposto.</p>
+<p>Per una sorgente isolata le superfici sono sfere concentriche. Tra armature piane ideali sono piani paralleli. In un conduttore in equilibrio elettrostatico il campo nel metallo è zero e il potenziale è costante. Appena fuori dalla superficie il campo, dove non nullo, è normale alla superficie.</p>
+<p><strong>Leggi la distanza.</strong> Se il salto in volt è uguale fra due coppie di curve, il campo è più intenso dove quelle curve sono più vicine. In campo uniforme il rapporto tra salto e distanza lungo x dà la componente del campo dopo aver invertito il segno. Per il grafico di p. 71, n. 35, questa lettura è facoltativa.</p>
+<div class="equation-grid">
+<div class="equation-tile"><math display="block"><msub><mi>E</mi><mi>x</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi>Δ</mi><mi>V</mi></mrow><mrow><mi>Δ</mi><mi>x</mi></mrow></mfrac></math>
+<p>In campo uniforme fornisce la componente lungo x. In campo variabile il rapporto su un tratto dà una media.</p>
+</div>
+</div>
+</section>
+</div><aside class="story">
+<h4>Molti volt per metro, pochi volt in tutto</h4>
+<p>Nell’esercizio sulla membrana il salto è solo 0,070 V. Dividere per pochi nanometri dà un campo di milioni di volt per metro nel modello piano. Qui «volt al metro» misura quanto rapidamente cambia V nello spazio. La caduta totale attraverso la membrana resta 0,070 V.</p>
+<p class="source"><a target="_blank" rel="noopener" href="immagini/69.png">Il modello della membrana, p. 69 n. 29</a>
+</p></aside>
+<div class="example">
+<h3>Esempio svolto</h3>
+<p>A 0,20 m da +3,0 nC e a 0,30 m da −6,0 nC si trova P. Calcola V(P).</p>
+<ol>
+<li>V₁ ≈ +135 V, V₂ ≈ −180 V.</li>
+<li>V(P) ≈ −45 V rispetto all’infinito.</li>
+<li>Se porti lentamente +2,0 nC dall’infinito a P, ΔU = qV(P) ≈ −9,0 × 10⁻⁸ J e il campo compie lavoro positivo.</li>
+</ol>
+</div>
+</div>
+<section class="book-bank" id="libro-4">
+<div class="section-heading">
+<div>
+<p class="kicker">Cutnell · Zanichelli</p>
+<h3>Esercizi del libro</h3>
+</div>
+</div>
+<p class="screen">Apri la pagina indicata per leggere dati e figure. Quelli segnati Aula e Casa fanno parte della rotta. Gli altri servono per recuperare o allenarti.</p>
+<div class="book-grid">
+<article id="libro-18-26" class="task book-task is-aula">
+<header class="book-heading"><span class="book-level aula">Aula</span>
+<div>
+<h4>Due equipotenziali attorno a una carica</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/69.png">Cap. 18 · p. 69, n. 26</a>
+</p>
+</div>
+</header>
+<p>Svolgi entrambi i punti: carica centrale con segno e distanza tra le due superfici.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Ricava q con i dati della curva interna. Poi usa la stessa q sulla curva esterna.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>q = V₁r₁/k = (100 V)(2,7 m)/k ≈ +3,0 × 10⁻⁸ C. A 50 V il raggio raddoppia a 5,4 m. La distanza radiale fra le due superfici è 2,7 m.</p>
+</details><label class="screen">Spazio per il ragionamento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</article>
+<article id="libro-18-32" class="task book-task is-casa">
+<header class="book-heading"><span class="book-level casa">Casa</span>
+<div>
+<h4>Mappa dei volt tra armature</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/69.png">Cap. 18 · p. 69, n. 32</a>
+</p>
+</div>
+</header>
+<p>Svolgi tutti e tre i punti del grafico: E, lavoro da A a B e distanza tra le piastre.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Tra A e B usa il salto di 2,0 V e la distanza di 2,0 mm.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>E = (2,0 V)/(2,0 × 10⁻³ m) = 1,0 × 10³ V/m. W = (1,5 × 10⁻⁹ C)(8,0 − 6,0)V = +3,0 × 10⁻⁹ J. d = (12 V)/E = 1,2 cm.</p>
+</details><label class="screen">Spazio per il ragionamento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</article>
+<article id="libro-18-15" class="task book-task is-recupero">
+<header class="book-heading"><span class="book-level recupero">Recupero</span>
+<div>
+<h4>Potenziale nullo nel punto medio</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/67.png">Cap. 18 · p. 67, n. 15</a>
+</p>
+</div>
+</header>
+<p>Ricava la seconda carica dagli uguali raggi rispetto al punto medio.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>I denominatori sono uguali. Perché i due contributi abbiano somma zero, i numeratori devono essere opposti.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>V medio = k(q₁ + q₂)/r. Quindi q₂ = −q₁ = −2,0 μC.</p>
+</details>
+</article>
+<article id="libro-18-19" class="task book-task is-allenamento">
+<header class="book-heading"><span class="book-level allenamento">Allenamento</span>
+<div>
+<h4>Energia cinetica di una particella alfa</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/67.png">Cap. 18 · p. 67, n. 19</a>
+</p>
+</div>
+</header>
+<p>Calcola l’energia cinetica finale in elettronvolt.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>La particella alfa ha carica +2e. Parte da ferma.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>V A − V B = 250 − (−150) = 400 V. W = (2e)(400 V) = 800 eV, uguale all’energia cinetica finale nel modello.</p>
+</details>
+</article>
+<article id="libro-18-29" class="task book-task is-allenamento">
+<header class="book-heading"><span class="book-level allenamento">Allenamento</span>
+<div>
+<h4>Campo nella membrana cellulare</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/69.png">Cap. 18 · p. 69, n. 29</a>
+</p>
+</div>
+</header>
+<p>Stima E dal salto di potenziale e dallo spessore.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Tratta la membrana come un sottile strato piano con campo circa uniforme.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>E ≈ 0,070 V/(8,0 × 10⁻⁹ m) ≈ 8,8 × 10⁶ V/m. Campo grande su una distanza piccolissima.</p>
+</details>
+</article>
+<article id="libro-18-34" class="task book-task is-sfida">
+<header class="book-heading"><span class="book-level sfida">Sfida</span>
+<div>
+<h4>La sfera di Van de Graaff</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/71.png">Cap. 18 · p. 71, n. 34</a>
+</p>
+</div>
+</header>
+<p>Trova il campo nella cavità vuota e i potenziali ai tre raggi indicati.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Con la simmetria sferica, usa Gauss e misura le distanze dal centro.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>E = 0 nella cavità. All’esterno V = kQ/r, con zero all’infinito. I tre valori sono circa 4,5 × 10⁵ V, 1,3 × 10⁵ V e 4,5 × 10⁴ V.</p>
+</details>
+</article>
+<article id="libro-18-35" class="task book-task is-facoltativo">
+<header class="book-heading"><span class="book-level facoltativo">Facoltativo</span>
+<div>
+<h4>E dalla pendenza di un grafico</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/71.png">Cap. 18 · p. 71, n. 35</a>
+</p>
+</div>
+</header>
+<p>Calcola E lungo x in ciascuno dei tre tratti.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Usa la pendenza V finale meno V iniziale divisa per lo spazio e inverti il segno.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>Eₓ = 0, +10 V/m, +5,0 V/m rispettivamente da A a B, da B a C e da C a D. Sui due tratti inclinati il modulo coincide con il valore positivo.</p>
+</details>
+</article>
+<article id="libro-18-38" class="task book-task is-facoltativo">
+<header class="book-heading"><span class="book-level facoltativo">Facoltativo</span>
+<div>
+<h4>Una circuitazione triangolare</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/71.png">Cap. 18 · p. 71, n. 38</a>
+</p>
+</div>
+</header>
+<p>Trova la differenza V(B) − V(A) usando il percorso chiuso.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Il lato CB è perpendicolare al campo e B e C hanno lo stesso potenziale.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>V(C) = V(B). Il dato del testo indica V(C) − V(A) = −5 V. Quindi V(B) − V(A) = −5 V. Se percorri il tratto da B verso A, la variazione finale meno iniziale è invece V(A) − V(B) = +5 V. La somma delle variazioni sul giro è zero.</p>
+</details>
+</article>
+</div>
+</section>
+<h3>Allenamento senza manuale</h3>
+<article class="task">
+<h4>D1 · In classe</h4>
+<p>A è a 80 V e B a 20 V. Una carica −2,0 μC viene spostata da A a B. Determina ΔV, ΔU e W.</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>Usa il riferimento finale meno iniziale per ΔV.</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>ΔU = qΔV. Il lavoro elettrico ha segno opposto.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>ΔV = −60 V, ΔU = +1,2 × 10⁻⁴ J, W = −1,2 × 10⁻⁴ J.</p>
+</details>
+</article>
+<article class="task">
+<h4>D2 · A casa</h4>
+<p>Due cariche −5,0 nC e +5,0 nC distano 0,40 m. Calcola V ed E nel punto medio. Indica il verso di E.</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>I contributi a V sono uguali e opposti. Per E disegna due frecce.</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>Entrambe le frecce puntano dalla positiva verso la negativa.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>V = 0 rispetto all’infinito. E ≈ 2(8,99 × 10⁹)(5,0 × 10⁻⁹)/(0,20)² = 2,25 × 10³ N/C verso la negativa.</p>
+</details>
+</article>
+<article class="task">
+<h4>D3 · Sfida</h4>
+<p>Due sorgenti positive identiche da +4,0 nC distano 0,50 m. Calcola V ed E nel punto medio. Confronta con D2 e spiega perché nessuna delle due condizioni V = 0 ed E = 0 implica l’altra.</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>La simmetria inverte un contributo vettoriale ma lascia uguale il contributo scalare.</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>Per V somma due contributi positivi a r = 0,25 m.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>E = 0, V ≈ +288 V. In D2 la situazione è invertita. V e E sono grandezze diverse e V dipende anche dallo zero scelto.</p>
+</details>
+</article>
+<article class="task">
+<h4>Recupero</h4>
+<p>Due punti valgono 40 V. Qual è la differenza? Va sottratto anche il riferimento a zero?</p><label class="screen">La tua risposta<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="solution">
+<summary>Controlla il ragionamento</summary>
+<p>La differenza è zero. Lo stesso riferimento si cancella nella sottrazione.</p>
+</details>
+</article>
+<article class="task">
+<h4>Prima di chiudere</h4>
+<p>Su una curva equipotenziale ci sono due punti A e B. Quanto lavoro compie il campo? Che cosa puoi dire sul verso del campo rispetto alla curva?</p><label class="screen">In una o due frasi<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="solution">
+<summary>Controlla la risposta</summary>
+<p>ΔV = 0 e W = 0. Dove E è non nullo, è perpendicolare alla curva e punta verso valori minori.</p>
+</details>
+</article>
+</section><nav class="page-sequence" aria-label="Progressione delle lezioni"><a class="pill-link" href="lezione-3.html">← Lezione 3</a><a class="pill-link" href="lezione-5.html">Lezione 5 →</a></nav>
+</main>
+</body>
+</html>

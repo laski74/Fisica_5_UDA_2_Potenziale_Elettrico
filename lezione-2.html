@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="it">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fisica · Campo elettrico e potenziale · L2 · Il campo attraversa la scatola?</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23184939'/%3E%3Cpath d='M23 14v36m18-36v36M6 32h17m18 0h17' stroke='%23daf7e5' stroke-width='5'/%3E%3Cpath d='M9 12h10m-5-5v10m32 0h10' stroke='%23ffc282' stroke-width='3'/%3E%3C/svg%3E"><link rel="stylesheet" href="stile.css"><script>window.MathJax={options:{enableMenu:false}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="interazioni.js"></script><script defer src="simulazioni.js"></script>
+
+</head>
+<body class="student study-edition inner-page"><a href="#contenuto" class="skip">Vai al contenuto</a>
+<header class="hero">
+<div class="wrap hero-layout">
+<div>
+<p class="meta">LICEO MONTI DI CHIERI · A.S. 2026–27 · FISICA</p>
+<h1>Campo elettrico e potenziale</h1>
+<p data-class-label>5CLL · Liceo linguistico</p>
+<p>LIM e studio · UDA 2 · Sei lezioni di 55 minuti</p>
+</div><svg class="hero-diagram" viewBox="0 0 370 184" role="img" aria-label="Schema di un dipolo con linee del campo orientate dalla carica positiva alla negativa."><defs><pattern id="quadro" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M 24 0 H 0 V 24" fill="none" stroke="#7bbca5" stroke-opacity=".22"/></pattern><marker id="arrow-hero" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 0 10 z" fill="#a3e9ce"/></marker></defs><rect width="370" height="184" rx="16" fill="url(#quadro)"/><g fill="none" stroke="#a3e9ce" stroke-width="1.7"><path d="M89 73 C138 15 230 15 281 73" stroke-opacity=".95"/><path d="M89 83 C145 56 225 56 281 83"/><path d="M89 92 H281"/><path d="M89 101 C145 128 225 128 281 101"/><path d="M89 111 C138 169 230 169 281 111" stroke-opacity=".95"/><path d="M166 29 H195 M166 63 H195 M166 92 H195 M166 121 H195 M166 155 H195" marker-end="url(#arrow-hero)" fill="none"/></g><circle cx="75" cy="92" r="25" fill="#ffc689"/><circle cx="295" cy="92" r="25" fill="#a7d9f4"/><path d="M64 92h22 M75 81v22 M284 92h22" fill="none" stroke="#163a32" stroke-width="4" stroke-linecap="round"/></svg>
+</div>
+</header>
+<div class="dock">
+<div class="wrap">
+<nav class="nav" aria-label="Indice dell’UDA"><a href="index.html">La rotta</a><a href="lezione-1.html">L1</a><a href="lezione-2.html" aria-current="page">L2</a><a href="lezione-3.html">L3</a><a href="lezione-4.html">L4</a><a href="lezione-5.html">L5</a><a href="lezione-6.html">L6</a><a href="esercizi.html">Esercizi</a><a href="mappa.html">Mappa</a><a href="formule.html">Formule</a><a href="facoltativi.html">Facoltativi</a><a href="autoverifica.html">Autoverifica</a></nav>
+<div class="tools"><label>Classe <select id="classe"><option>5CLL</option><option>5DSU</option></select></label><button id="dsa" type="button" aria-pressed="false">DSA/BES</button><button type="button" data-details="hint" data-label="aiuti">Apri aiuti</button><button type="button" data-details="solution" data-label="soluzioni">Apri soluzioni</button><button id="dark" type="button" aria-pressed="false">Tema DARK</button><button id="print" type="button">Stampa la lezione</button><a href="consegne.html">Tutte le consegne</a>
+</div>
+</div>
+</div>
+<main id="contenuto" class="wrap">
+<div class="print-title">Fisica · Campo elettrico e potenziale</div>
+<p class="print-title" data-class-label>5CLL · Liceo linguistico</p>
+<section class="sheet lesson" id="lezione-2">
+<header class="lesson-heading"><p class="kicker">Lezione 2</p>
+<h2>Il campo attraversa la scatola?</h2>
+<p class="goal">Campo, sovrapposizione, linee, flusso e Gauss · Sommare vettori di campo e distinguere il campo locale dal flusso netto.</p></header>
+<div class="screen">
+<div class="question">
+<h3>Prima di calcolare</h3>
+<p>Immagina una scatola trasparente in un campo elettrico. Entrano tante linee quante ne escono. Puoi concludere che nella scatola il campo è nullo?</p><label class="screen">Disegna che cosa succede alle frecce quando togli la carica interna e lasci una sorgente all’esterno. Prevedi campo e flusso separatamente.<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</div>
+<h3>Esplora il modello</h3>
+<div class="lab screen" data-lab="campo">
+<h4>La dogana delle frecce</h4>
+<p>Seleziona le configurazioni di cariche, cambia il raggio della sezione della superficie sferica e osserva il campo nel punto P. Prova il caso «solo esterna» e quello con due cariche opposte interne. Controlla se flusso netto zero implica E = 0.</p>
+<form><label>Sorgenti <select name="sorgenti"><option value="mix">Positiva interna e negativa esterna</option><option value="outside">Solo esterna</option><option value="dipole">Due opposte, simmetriche</option><option value="equal">Due positive, simmetriche</option><option value="one">Una positiva centrale</option></select></label><label>Raggio della sfera (m) <input name="r" type="range" min="0.26" max="0.7" step="0.02" value="0.52"> <span class="range-value" aria-hidden="true">0.52</span></label><label>Ascissa di P (m) <input name="x" type="range" min="-1.25" max="1.25" step="0.05" value="0.25"> <span class="range-value" aria-hidden="true">0.25</span></label><button type="reset">Ripristina valori</button>
+</form><svg viewBox="0 0 660 300" role="img" aria-label="Linee di campo e sezione di una superficie gaussiana"></svg><output aria-live="polite"></output>
+<p class="book">La circonferenza tratteggiata è una sezione di una superficie sferica chiusa. Le curve mostrano alcune linee di campo. La freccia più spessa rappresenta E in P. P ha ordinata fissa di 0,20 m.</p><noscript>Per interagire con il modello abilita JavaScript.</noscript>
+</div>
+<h3 id="teoria-2">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 17 · pp. 11–14 campo e sovrapposizione; pp. 15–18 linee di campo; pp. 19–22 flusso e teorema di Gauss.</span>
+</p>
+<div class="theory-expanded">
+<p class="book theory-refs">pp. 12–13 · Definizione e sovrapposizione · pp. 16–17 · Linee di campo · <a target="_blank" rel="noopener" href="immagini/cap17-20-21.png">pp. 20–21 · Flusso e Gauss</a>
+</p>
+<section class="theory-cycle">
+<h4>Campo elettrico, sorgenti e carica di prova</h4>
+<p>Il <strong>campo elettrico in P</strong> è il rapporto fra la forza elettrica sulla piccola carica di prova posta in P e la sua carica. Nel modello ideale si considera una carica di prova abbastanza piccola da lasciare le sorgenti nella configurazione di partenza. Per individuare il verso di E si prende una carica di prova positiva.</p>
+<p>Per una <mark class="key-term">sorgente puntiforme</mark>, il campo è radiale. Raddoppiare r riduce il modulo a un quarto. Dove ci sono più cariche, disegna prima le frecce di ciascuna. Per i vettori su un asse somma le componenti con segno. Per contributi obliqui usa le componenti lungo gli assi e ricostruisci il vettore.</p>
+<div class="equation-grid">
+<div class="equation-tile"><math display="block"><mover accent="true"><mi>E</mi><mo>→</mo></mover><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mover accent="true"><mi>F</mi><mo>→</mo></mover><msub><mi>q</mi><mn>0</mn></msub></mfrac></math>
+<p>Campo in P, in N/C. q₀ è una carica di prova che non altera sensibilmente le sorgenti.</p>
+</div>
+<div class="equation-tile"><math display="block"><mi>E</mi><mo>=</mo><mi>k</mi><mfrac><mrow><mo>|</mo><mi>Q</mi><mo>|</mo></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac></math>
+<p>Modulo del campo di una <mark class="key-term">sorgente puntiforme</mark> nel vuoto. r è la distanza fra sorgente e punto.</p>
+</div>
+<div class="equation-tile"><math display="block"><msub><mi><mover accent="true"><mi>E</mi><mo>→</mo></mover></mi><mtext>tot</mtext></msub><mo>=</mo><msub><mover accent="true"><mi>E</mi><mo>→</mo></mover><mn>1</mn></msub><mo>+</mo><msub><mover accent="true"><mi>E</mi><mo>→</mo></mover><mn>2</mn></msub><mo>+</mo><mo>…</mo></math>
+<p>Somma vettoriale. Su un asse, somma le componenti con il loro segno.</p>
+</div>
+</div>
+</section>
+<section class="theory-cycle">
+<h4>Leggere le linee di campo</h4>
+<p>Una linea di campo è una curva <mark class="key-term">tangente a E</mark> dove E è definito e diverso da zero. La freccia indica il verso che avrebbe la forza su una carica positiva. Le linee escono dalle cariche positive e arrivano a quelle negative o si estendono fino ai bordi della regione rappresentata. Dove si incrociassero ci sarebbero due direzioni per lo stesso vettore. Nei punti con E = 0 la direzione del campo è indeterminata.</p>
+<p>Due positive identiche hanno campo nullo nel punto medio. Tra una positiva e una negativa uguali in modulo, invece, le due frecce nel punto medio puntano entrambe verso la negativa. Le linee descrivono il campo nello spazio. La traiettoria di una particella dipende anche dalla velocità iniziale.</p>
+</section>
+<section class="theory-cycle">
+<h4>Flusso, normale e superficie chiusa</h4>
+<p>Il <strong>flusso</strong> misura il contributo della componente di E perpendicolare alla superficie. Per un piano, scegli una normale e proietta E su quella direzione. La formula usa l’angolo con la normale. Per una superficie curva immaginiamo piccoli elementi piani e sommiamo i contributi. In una <mark class="key-term">superficie chiusa</mark> ogni normale si orienta verso l’esterno.</p>
+<p>Il <strong>teorema di Gauss</strong> lega il <mark class="key-term">flusso netto uscente</mark> alla somma algebrica delle cariche racchiuse. Una carica esterna può cambiare E in ogni punto senza cambiare il totale. Per un campo uniforme che attraversa una scatola vuota, i contributi entranti e uscenti si compensano.</p>
+<p>La legge di Gauss vale per qualunque <mark class="key-term">superficie chiusa</mark> ben definita che non attraversi le sorgenti puntiformi. Per trovare E da Φ serve anche un argomento di simmetria. Per una sfera centrata su una singola carica positiva, E è radiale e ha lo stesso modulo su tutta la sfera. Si ottiene E · 4πr² = Q/ε₀ e quindi la legge dell’inverso del quadrato.</p>
+<div class="equation-grid">
+<div class="equation-tile"><math display="block"><msub><mi>Φ</mi><mtext>piano</mtext></msub><mo>=</mo><mi>E</mi><mi>A</mi><mo>·</mo><mi mathvariant="normal">cos</mi><mi>θ</mi></math>
+<p>Piano in campo uniforme. θ si misura rispetto alla normale orientata.</p>
+</div>
+<div class="equation-tile"><math display="block"><msub><mi>Φ</mi><mtext>chiusa</mtext></msub><mo>=</mo><mfrac><msub><mi>Q</mi><mtext>int</mtext></msub><msub><mi>ε</mi><mn>0</mn></msub></mfrac></math>
+<p>Flusso totale uscente attraverso una <mark class="key-term">superficie chiusa</mark>. Somma algebrica delle cariche interne.</p>
+</div>
+</div>
+</section>
+</div><aside class="story">
+<h4>Le frecce hanno anche una storia</h4>
+<p>Una linea disegnata è un modo di condensare tante misure di forza su una carica di prova. Prova a spiegarla a chi obietta «se le frecce entrano ed escono, allora dentro non succede nulla». La differenza fra valore locale e bilancio globale è la stessa che c’è tra la quantità d’acqua entrata e il flusso netto attraverso la superficie di un recipiente.</p>
+<p class="source"><a target="_blank" rel="noopener" href="immagini/cap17-20-21.png">Flusso e Gauss nel manuale, pp. 20–21</a>
+</p></aside>
+<div class="example">
+<h3>Esempio svolto</h3>
+<p>Una superficie chiusa racchiude +3 nC e −1 nC. Fuori c’è +8 nC. Trova il flusso netto.</p>
+<ol>
+<li>Somma le cariche interne: +2 nC.</li>
+<li>Dividi per ε₀ = 8,85 × 10⁻¹² C²/(N·m²). Ottieni +2,26 × 10² N·m²/C.</li>
+<li>La carica esterna modifica E sulla superficie. Il flusso netto resta lo stesso.</li>
+</ol>
+</div>
+</div>
+<section class="book-bank" id="libro-2">
+<div class="section-heading">
+<div>
+<p class="kicker">Cutnell · Zanichelli</p>
+<h3>Esercizi del libro</h3>
+</div>
+</div>
+<p class="screen">Apri la pagina indicata per leggere dati e figure. Quelli segnati Aula e Casa fanno parte della rotta. Gli altri servono per recuperare o allenarti.</p>
+<div class="book-grid">
+<article id="libro-17-38" class="task book-task is-aula">
+<header class="book-heading"><span class="book-level aula">Aula</span>
+<div>
+<h4>Flusso massimo attraverso un rettangolo</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/cap17-34-35.png">Cap. 17 · p. 35, n. 38</a>
+</p>
+</div>
+</header>
+<p>Trova il flusso massimo e descrivi l’orientamento della superficie.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Per il massimo positivo, il campo è parallelo alla normale scelta.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>A = 0,16 × 0,38 m², cos θ = 1. Φ massimo = 580 × 0,16 × 0,38 ≈ 35 N·m²/C. Il piano è perpendicolare al campo.</p>
+</details><label class="screen">Spazio per il ragionamento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</article>
+<article id="libro-17-40" class="task book-task is-casa">
+<header class="book-heading"><span class="book-level casa">Casa</span>
+<div>
+<h4>Sei facce, una carica interna</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/cap17-36-37.png">Cap. 17 · p. 36, n. 40</a>
+</p>
+</div>
+</header>
+<p>Determina Q dal flusso delle sei facce.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Somma i flussi conservando tutti i segni.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>Φ totale = 1500 + 2200 + 4600 − 1800 − 3500 − 5400 = −2400 N·m²/C. Q = ε₀Φ ≈ −2,1 × 10⁻⁸ C.</p>
+</details><label class="screen">Spazio per il ragionamento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</article>
+<article id="libro-17-41" class="task book-task is-recupero">
+<header class="book-heading"><span class="book-level recupero">Recupero</span>
+<div>
+<h4>Flusso zero con campo presente</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/cap17-36-37.png">Cap. 17 · p. 36, n. 41</a>
+</p>
+</div>
+</header>
+<p>Spiega che cosa puoi concludere dopo aver trovato flusso totale nullo.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Due cariche opposte producono due vettori. Prova a disegnarli in un punto fra le cariche.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>La carica netta interna è zero. Il campo dei due contributi in generale non è nullo. Per esempio nel punto medio del dipolo i vettori hanno lo stesso verso.</p>
+</details>
+</article>
+<article id="libro-17-35" class="task book-task is-allenamento">
+<header class="book-heading"><span class="book-level allenamento">Allenamento</span>
+<div>
+<h4>Disegnare le linee per tre cariche</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/cap17-34-35.png">Cap. 17 · p. 35, n. 35</a>
+</p>
+</div>
+</header>
+<p>Disegna qualitativamente le linee indicando con frecce il verso.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Fai partire le linee dalle cariche positive. La magnitudine di +2q è doppia di quella di +q.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>Le linee escono da +q e da +2q e arrivano a −3q. Una rappresentazione possibile sceglie, per esempio, 4 e 8 linee uscenti e 12 entranti, rispettando le simmetrie compatibili senza incroci.</p>
+</details>
+</article>
+<article id="libro-17-29" class="task book-task is-sfida">
+<header class="book-heading"><span class="book-level sfida">Sfida</span>
+<div>
+<h4>Sovrapposizione sull’asse x</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/cap17-34-35.png">Cap. 17 · p. 34, n. 29</a>
+</p>
+</div>
+</header>
+<p>Calcola il campo nelle due posizioni indicate e usa il segno per dire il verso.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>In ciascun punto disegna i contributi prima di sommarli. Usa r in metri.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>A x = 0: Eₓ = k[−(8,5 × 10⁻⁶)/(0,03)² + (21 × 10⁻⁶)/(0,09)²] ≈ −6,2 × 10⁷ N/C. A x = 0,06 m i contributi sono entrambi verso +x: Eₓ ≈ +2,9 × 10⁸ N/C.</p>
+</details>
+</article>
+</div>
+</section>
+<h3>Allenamento senza manuale</h3>
+<article class="task">
+<h4>B1 · In classe</h4>
+<p>Due sorgenti da +4,0 nC e −4,0 nC si trovano a sinistra e a destra del punto medio P, entrambe a 0,30 m da P. Calcola E(P) e indicane il verso.</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>Disegna prima il contributo della positiva e quello della negativa.</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>Il punto P è a destra della positiva e a sinistra della negativa.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>I contributi puntano entrambi a destra. Ciascuno vale circa 400 N/C. E risultante ≈ 800 N/C verso destra.</p>
+</details>
+</article>
+<article class="task">
+<h4>B2 · A casa</h4>
+<p>Una superficie piana di area 0,020 m² è in E = 600 N/C. La normale forma 60° con E. Calcola Φ. Poi considera un cubo completamente immerso nello stesso campo uniforme, privo di carica interna. Qual è il suo flusso netto?</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>Nella formula l’angolo è con la normale.</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>Per il cubo usa Gauss oppure confronta le facce opposte.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>Per il piano Φ = 600 × 0,020 × 0,50 = +6,0 N·m²/C. Per il cubo Φ = 0 con campo non nullo.</p>
+</details>
+</article>
+<article class="task">
+<h4>B3 · Sfida</h4>
+<p>Due sorgenti producono in P i contributi Eₓ = +300 N/C ed Eᵧ = −400 N/C, ciascuno lungo l’asse indicato. Trova modulo e direzione. Poi spiega perché la stessa procedura di addizione con Pitagora sarebbe sbagliata per i flussi associati a due cariche interne.</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>Il campo ha componenti ortogonali. Il flusso è uno scalare con segno.</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>Calcola anche l’angolo sotto l’asse +x.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>E = 500 N/C a circa 53° sotto +x. I flussi si sommano algebricamente, come le cariche in Q interno.</p>
+</details>
+</article>
+<article class="task">
+<h4>Recupero</h4>
+<p>Disegna cinque frecce che entrano e cinque che escono da un cubo. Colorale con due colori e scrivi i segni dei flussi.</p><label class="screen">La tua risposta<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="solution">
+<summary>Controlla il ragionamento</summary>
+<p>Entrante negativo, uscente positivo. Con uguale contributo in valore assoluto, il totale è zero.</p>
+</details>
+</article>
+<article class="task">
+<h4>Prima di chiudere</h4>
+<p>In presenza di una carica esterna, dentro la superficie gaussiana E può essere diverso da zero? Quale flusso netto misuri se Q interno è zero?</p><label class="screen">In una o due frasi<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="solution">
+<summary>Controlla la risposta</summary>
+<p>Sì, il campo locale può essere diverso da zero. Il flusso netto è zero.</p>
+</details>
+</article>
+</section><nav class="page-sequence" aria-label="Progressione delle lezioni"><a class="pill-link" href="lezione-1.html">← Lezione 1</a><a class="pill-link" href="lezione-3.html">Lezione 3 →</a></nav>
+</main>
+</body>
+</html>

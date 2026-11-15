@@ -56,3 +56,101 @@ for (const button of document.querySelectorAll('[data-details]')) {
 }
 document.getElementById('print')?.addEventListener('click', () => window.print());
 
+
+function highlightCurrentSection() {
+  const dock = document.querySelector('.dock');
+  const nav = dock?.querySelector('.nav');
+  if (!nav) return;
+
+  function keepLinkVisible(link) {
+    const navBounds = nav.getBoundingClientRect();
+    const linkBounds = link.getBoundingClientRect();
+    if (linkBounds.left < navBounds.left) {
+      nav.scrollLeft += linkBounds.left - navBounds.left - 4;
+    } else if (linkBounds.right > navBounds.right) {
+      nav.scrollLeft += linkBounds.right - navBounds.right + 4;
+    }
+  }
+
+  function setDockOffset() {
+    document.documentElement.style.setProperty('--dock-offset', (dock.offsetHeight + 12) + 'px');
+  }
+
+  const currentPage = nav.querySelector('[aria-current="page"]');
+  if (currentPage) {
+    const measure = () => {
+      setDockOffset();
+      keepLinkVisible(currentPage);
+    };
+    new ResizeObserver(measure).observe(dock);
+    measure();
+    return;
+  }
+
+  const links = new Map([...nav.querySelectorAll('a[href^="#"]')]
+    .map(link => [link.hash.slice(1), link]));
+  const sections = [...document.querySelectorAll('#contenuto > section[id]')]
+    .filter(section => links.has(section.id));
+  if (!sections.length) return;
+
+  let current;
+  let frame = 0;
+
+  function update() {
+    frame = 0;
+    const readingLine = dock.offsetHeight + 18;
+    let activeSection = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top > readingLine) break;
+      activeSection = section;
+    }
+    const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+    if (atBottom) activeSection = sections.at(-1);
+
+    const activeLink = links.get(activeSection.id);
+    if (activeLink === current) return;
+
+    current?.removeAttribute('aria-current');
+    activeLink.setAttribute('aria-current', 'location');
+    current = activeLink;
+
+    keepLinkVisible(activeLink);
+  }
+
+  function scheduleUpdate() {
+    if (!frame) frame = requestAnimationFrame(update);
+  }
+
+  function measureDock() {
+    setDockOffset();
+    scheduleUpdate();
+  }
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('hashchange', scheduleUpdate);
+  window.addEventListener('pageshow', scheduleUpdate);
+  new ResizeObserver(measureDock).observe(dock);
+  measureDock();
+}
+
+highlightCurrentSection();
+
+
+
+// Le risposte restano nella scheda del browser mentre si cambia lezione.
+for (const [index, field] of [...document.querySelectorAll('.study-edition.inner-page main textarea')].entries()) {
+  const key = 'monti-fisica2-risposta:' + location.pathname + ':' + index;
+  try {
+    const draft = sessionStorage.getItem(key);
+    if (draft !== null) field.value = draft;
+    field.addEventListener('input', () => {
+      try {
+        sessionStorage.setItem(key, field.value);
+      } catch {
+        // Il campo resta comunque utilizzabile se il browser blocca la memoria locale.
+      }
+    });
+  } catch {
+    // Alcuni browser limitano la memoria locale per i file aperti direttamente.
+  }
+}

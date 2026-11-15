@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="it">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fisica · Campo elettrico e potenziale · L1 · Il lavoro elettrico dipende dalla strada?</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23184939'/%3E%3Cpath d='M23 14v36m18-36v36M6 32h17m18 0h17' stroke='%23daf7e5' stroke-width='5'/%3E%3Cpath d='M9 12h10m-5-5v10m32 0h10' stroke='%23ffc282' stroke-width='3'/%3E%3C/svg%3E"><link rel="stylesheet" href="stile.css"><script>window.MathJax={options:{enableMenu:false}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="interazioni.js"></script><script defer src="simulazioni.js"></script>
+
+</head>
+<body class="student study-edition inner-page"><a href="#contenuto" class="skip">Vai al contenuto</a>
+<header class="hero">
+<div class="wrap hero-layout">
+<div>
+<p class="meta">LICEO MONTI DI CHIERI · A.S. 2026–27 · FISICA</p>
+<h1>Campo elettrico e potenziale</h1>
+<p data-class-label>5CLL · Liceo linguistico</p>
+<p>LIM e studio · UDA 2 · Sei lezioni di 55 minuti</p>
+</div><svg class="hero-diagram" viewBox="0 0 370 184" role="img" aria-label="Schema di un dipolo con linee del campo orientate dalla carica positiva alla negativa."><defs><pattern id="quadro" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M 24 0 H 0 V 24" fill="none" stroke="#7bbca5" stroke-opacity=".22"/></pattern><marker id="arrow-hero" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 0 10 z" fill="#a3e9ce"/></marker></defs><rect width="370" height="184" rx="16" fill="url(#quadro)"/><g fill="none" stroke="#a3e9ce" stroke-width="1.7"><path d="M89 73 C138 15 230 15 281 73" stroke-opacity=".95"/><path d="M89 83 C145 56 225 56 281 83"/><path d="M89 92 H281"/><path d="M89 101 C145 128 225 128 281 101"/><path d="M89 111 C138 169 230 169 281 111" stroke-opacity=".95"/><path d="M166 29 H195 M166 63 H195 M166 92 H195 M166 121 H195 M166 155 H195" marker-end="url(#arrow-hero)" fill="none"/></g><circle cx="75" cy="92" r="25" fill="#ffc689"/><circle cx="295" cy="92" r="25" fill="#a7d9f4"/><path d="M64 92h22 M75 81v22 M284 92h22" fill="none" stroke="#163a32" stroke-width="4" stroke-linecap="round"/></svg>
+</div>
+</header>
+<div class="dock">
+<div class="wrap">
+<nav class="nav" aria-label="Indice dell’UDA"><a href="index.html">La rotta</a><a href="lezione-1.html" aria-current="page">L1</a><a href="lezione-2.html">L2</a><a href="lezione-3.html">L3</a><a href="lezione-4.html">L4</a><a href="lezione-5.html">L5</a><a href="lezione-6.html">L6</a><a href="esercizi.html">Esercizi</a><a href="mappa.html">Mappa</a><a href="formule.html">Formule</a><a href="facoltativi.html">Facoltativi</a><a href="autoverifica.html">Autoverifica</a></nav>
+<div class="tools"><label>Classe <select id="classe"><option>5CLL</option><option>5DSU</option></select></label><button id="dsa" type="button" aria-pressed="false">DSA/BES</button><button type="button" data-details="hint" data-label="aiuti">Apri aiuti</button><button type="button" data-details="solution" data-label="soluzioni">Apri soluzioni</button><button id="dark" type="button" aria-pressed="false">Tema DARK</button><button id="print" type="button">Stampa la lezione</button><a href="consegne.html">Tutte le consegne</a>
+</div>
+</div>
+</div>
+<main id="contenuto" class="wrap">
+<div class="print-title">Fisica · Campo elettrico e potenziale</div>
+<p class="print-title" data-class-label>5CLL · Liceo linguistico</p>
+<section class="sheet lesson" id="lezione-1">
+<header class="lesson-heading"><p class="kicker">Lezione 1</p>
+<h2>Il lavoro elettrico dipende dalla strada?</h2>
+<p class="goal">Lavoro, energia potenziale, differenza di potenziale · Prevedere e calcolare il segno del lavoro e della variazione di energia potenziale.</p></header>
+<div class="screen">
+<div class="question">
+<h3>Prima di calcolare</h3>
+<p>Due corrieri trasportano la stessa carica da A a B fra due piastre. Uno va dritto, l’altro fa il giro dell’isolato. Su quale carica il campo compie più lavoro?</p><label class="screen">Prima di usare il modello, ordina i due percorsi per lavoro e scrivi che cosa cambieresti nella previsione se la carica fosse negativa.<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</div>
+<h3>Esplora il modello</h3>
+<div class="lab screen" data-lab="lavoro">
+<h4>Il corriere e l’isolato</h4>
+<p>Confronta i due percorsi e leggi il contributo dei singoli tratti. Poi inverti il segno della carica e sposta B sulla stessa verticale di A. Quali grandezze cambiano segno? Quali si annullano?</p>
+<form><label>Percorso <select name="via"><option value="diretto">Diretto</option><option value="giro">Giro dell’isolato</option></select></label><label>Carica <select name="q"><option value="2">+2 μC</option><option value="-2">−2 μC</option></select></label><label>Spostamento orizzontale Δx (m) <input name="dx" type="range" min="0" max="0.5" step="0.05" value="0.35"> <span class="range-value" aria-hidden="true">0.35</span></label><button type="reset">Ripristina valori</button>
+</form><svg viewBox="0 0 660 300" role="img" aria-label="Percorsi della carica in un campo uniforme"></svg><output aria-live="polite"></output><noscript>Per interagire con il modello abilita JavaScript.</noscript>
+</div>
+<h3 id="teoria-1">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 18, pp. 43–44 · Lavoro e variazione di energia potenziale.</span><span class="theory-aside">p. 46 · Primo richiamo alla differenza di potenziale.</span>
+</p>
+<div class="theory-expanded">
+<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/43.png">p. 43 · Forza conservativa</a> · <a target="_blank" rel="noopener" href="immagini/44.png">p. 44 · Lavoro in campo uniforme</a>
+</p>
+<section class="theory-cycle">
+<h4>Prima la forza, poi il lavoro</h4>
+<p>Il campo è una proprietà dello spazio attorno alle sorgenti. Quando ci metti una carica q₀, la forza è determinata dal prodotto di q₀ per il vettore campo. Su una <mark class="key-term">carica positiva</mark> le frecce forza e campo puntano nello stesso verso, mentre su una negativa sono opposte.</p>
+<p>Per capire il lavoro disegna <strong>forza e spostamento</strong>. Conta la parte dello <mark class="key-term">spostamento lungo la forza</mark>. Se le frecce sono parallele e concordi il lavoro è positivo, se sono opposte è negativo, se formano 90° è zero. Se il campo è orizzontale e uniforme basta la variazione orizzontale della posizione.</p>
+<div class="equation-grid">
+<div class="equation-tile"><math display="block"><mover accent="true"><mi>F</mi><mo>→</mo></mover><mo>=</mo><msub><mi>q</mi><mn>0</mn></msub><mover accent="true"><mi>E</mi><mo>→</mo></mover></math>
+<p>Forza in N. Il segno di q₀ decide il verso della forza rispetto al campo.</p>
+</div>
+<div class="equation-tile"><math display="block"><msub><mi>W</mi><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></msub><mo>=</mo><mover accent="true"><mi>F</mi><mo>→</mo></mover><mo>·</mo><mover accent="true"><mi>s</mi><mo>→</mo></mover><mo>=</mo><mi>F</mi><mi>s</mi><mo>·</mo><mi mathvariant="normal">cos</mi><mi>θ</mi></math>
+<p>Per forza costante. θ è l’angolo fra forza e spostamento. F e s sono moduli.</p>
+</div>
+<div class="equation-tile"><math display="block"><msub><mi>W</mi><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></msub><mo>=</mo><msub><mi>q</mi><mn>0</mn></msub><mi>E</mi><mrow><mi>Δ</mi><mi>x</mi></mrow></math>
+<p>Con il campo uniforme verso +x. Δx ha segno e misura lo spostamento orizzontale.</p>
+</div>
+</div>
+</section>
+<section class="theory-cycle">
+<h4>Che cosa significa «conservativa»</h4>
+<p>Una forza è conservativa quando il suo lavoro fra due punti dipende soltanto da <mark class="key-term">punto iniziale e finale</mark>. Lo stesso principio si può leggere su un giro chiuso: tornare al punto di partenza dà lavoro totale zero. Su ciascun tratto, invece, il lavoro può essere diverso da zero.</p>
+<p>L’energia potenziale è una funzione della configurazione. La sua variazione è opposta al lavoro della forza conservativa. Lo zero si può scegliere. Per esempio nel modello di p. 44, con il campo verticale verso il basso e h misurata verso l’alto dalla piastra negativa, si può porre U = q₀Eh.</p>
+<div class="equation-grid">
+<div class="equation-tile"><math display="block"><mrow><mi>Δ</mi><mi>U</mi></mrow><mo>=</mo><msub><mi>U</mi><mi>B</mi></msub><mo>−</mo><msub><mi>U</mi><mi>A</mi></msub><mo>=</mo><mo>−</mo><msub><mi>W</mi><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></msub></math>
+<p>Variazione finale meno iniziale. Vale anche per campo elettrostatico non uniforme.</p>
+</div>
+<div class="equation-tile"><math display="block"><mrow><mi>Δ</mi><mi>K</mi></mrow><mo>=</mo><msub><mi>W</mi><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></msub></math>
+<p>Quando il lavoro totale è quello elettrico. Vale anche se agiscono altre forze che fanno lavoro nullo.</p>
+</div>
+</div>
+</section>
+<section class="theory-cycle">
+<h4>Un bilancio, due punti di vista</h4>
+<p>Se lasci libera una carica e il campo è l’unica forza che fa lavoro, l’energia cinetica cresce quando U diminuisce. Se invece tu sposti la carica lentamente, mantenendo trascurabile la <mark class="key-term">variazione di energia cinetica</mark>, il tuo lavoro compensa quello del campo. In questo caso <strong>lavoro dell’agente esterno = ΔU</strong>.</p>
+<p><strong>Controllo di segno.</strong> Campo verso destra, carica negativa spostata verso destra: il campo tira verso sinistra, W è negativo e U aumenta. Il potenziale diminuisce andando verso destra, perché la mappa di V resta la stessa qualunque carica scegli di usare.</p>
+</section>
+</div><aside class="story">
+<h4>Una discesa in un quadro</h4>
+<p>Nell’apertura del capitolo il libro accosta l’elettrostatica a <i>Separazione di sera</i> di Paul Klee. Usa le due frecce del quadro per inventare due storie: una carica positiva e una negativa partono dallo stesso punto. Per entrambe la mappa dei volt è la stessa. In quale verso diminuirebbe U?</p>
+<p class="source"><a target="_blank" rel="noopener" href="immagini/43.png">Apertura del capitolo 18, p. 43</a>
+</p></aside>
+<div class="example">
+<h3>Esempio svolto</h3>
+<p>Una carica +2,0 μC avanza di 0,30 m verso destra in E = 400 N/C. Calcola W, ΔU e ΔV.</p>
+<ol>
+<li>Proiezione positiva: Δx = +0,30 m.</li>
+<li>W = (2,0 × 10⁻⁶)(400)(0,30) = +2,4 × 10⁻⁴ J.</li>
+<li>ΔU = −2,4 × 10⁻⁴ J e ΔV = −120 V. Invertendo q, W e ΔU si invertono.</li>
+</ol>
+</div>
+</div>
+<section class="book-bank" id="libro-1">
+<div class="section-heading">
+<div>
+<p class="kicker">Cutnell · Zanichelli</p>
+<h3>Esercizi del libro</h3>
+</div>
+</div>
+<p class="screen">Apri la pagina indicata per leggere dati e figure. Quelli segnati Aula e Casa fanno parte della rotta. Gli altri servono per recuperare o allenarti.</p>
+<div class="book-grid">
+<article id="libro-18-2" class="task book-task is-aula">
+<header class="book-heading"><span class="book-level aula">Aula</span>
+<div>
+<h4>Forza e campo dal lavoro</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/64.png">Cap. 18 · p. 64, n. 2</a>
+</p>
+</div>
+</header>
+<p>Svolgi entrambe le richieste: intensità, direzione e verso di forza e campo.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>La differenza riportata è U iniziale meno U finale. Dividi il lavoro per lo spostamento, poi dividi la forza per la carica.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>W = +9,0 × 10⁻⁴ J. F = W/(0,20 m) = 4,5 × 10⁻³ N. E = F/(1,5 × 10⁻⁶ C) = 3,0 × 10³ N/C. Entrambi da A verso B, perché W e q sono positivi.</p>
+</details><label class="screen">Spazio per il ragionamento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</article>
+<article id="libro-18-16" class="task book-task is-casa">
+<header class="book-heading"><span class="book-level casa">Casa</span>
+<div>
+<h4>Uno ione attraversa la membrana</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/67.png">Cap. 18 · p. 67, n. 16</a>
+</p>
+</div>
+</header>
+<p>Calcola il lavoro del campo su uno ione sodio dall’esterno all’interno.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Nella formula del lavoro metti per primo il potenziale esterno, che è quello iniziale.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>W = e(V est − V int) = (1,60 × 10⁻¹⁹ C)(0,070 V) = +1,12 × 10⁻²⁰ J.</p>
+</details><label class="screen">Spazio per il ragionamento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+</article>
+<article id="libro-18-5" class="task book-task is-recupero">
+<header class="book-heading"><span class="book-level recupero">Recupero</span>
+<div>
+<h4>Energia potenziale e lavoro</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/64.png">Cap. 18 · p. 64, n. 5</a>
+</p>
+</div>
+</header>
+<p>Spiega il legame fra il lavoro elettrico e la variazione di energia potenziale.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Se la particella accelera, quale energia aumenta?</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>Per una forza conservativa W = −ΔU. Se agisce soltanto il campo, W = ΔK e l’aumento di K corrisponde a una diminuzione di U.</p>
+</details>
+</article>
+<article id="libro-18-57" class="task book-task is-allenamento">
+<header class="book-heading"><span class="book-level allenamento">Allenamento</span>
+<div>
+<h4>Ricavare il segno della carica</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/74.png">Cap. 18 · p. 74, n. 57</a>
+</p>
+</div>
+</header>
+<p>Ricava la carica usando lavoro e potenziale iniziale meno finale.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>Isola q in W = q(V iniziale − V finale).</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>q = (2,70 × 10⁻³ J)/(50,0 V) = +5,40 × 10⁻⁵ C.</p>
+</details>
+</article>
+<article id="libro-18-17" class="task book-task is-sfida">
+<header class="book-heading"><span class="book-level sfida">Sfida</span>
+<div>
+<h4>Un elettrone fra suolo e nube</h4>
+<p class="book"><a target="_blank" rel="noopener" href="immagini/67.png">Cap. 18 · p. 67, n. 17</a>
+</p>
+</div>
+</header>
+<p>Calcola la variazione di U dal terreno alla nube.</p>
+<details class="hint">
+<summary>Apri un suggerimento</summary>
+<p>La nube è il punto finale. Inserisci q = −e.</p>
+</details>
+<details class="solution">
+<summary>Verifica lo svolgimento</summary>
+<p>ΔV = +1,3 × 10⁸ V. ΔU = (−1,60 × 10⁻¹⁹ C)(1,3 × 10⁸ V) ≈ −2,1 × 10⁻¹¹ J.</p>
+</details>
+</article>
+</div>
+</section>
+<h3>Allenamento senza manuale</h3>
+<article class="task">
+<h4>A1 · In classe</h4>
+<p>Una carica −3,0 μC è spostata di 0,20 m verso destra in un campo di 500 N/C verso destra. Calcola W, ΔU e ΔV.</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>Disegna E e la forza sulla carica negativa.</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>Usa Δx = +0,20 m e conserva il segno di q nel prodotto.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>W = −3,0 × 10⁻⁴ J, ΔU = +3,0 × 10⁻⁴ J, ΔV = −100 V. La forza è verso sinistra.</p>
+</details>
+</article>
+<article class="task">
+<h4>A2 · A casa</h4>
+<p>E = 300 N/C verso destra, q = +4,0 μC. Da A a B si procede 0,25 m a destra e poi 0,40 m in alto. Calcola il lavoro su ciascun tratto, ΔU e ΔV.</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>Quale tratto è perpendicolare a E?</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>Il tratto orizzontale dà W = qE × 0,25 m.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>W₁ = +3,0 × 10⁻⁴ J e W₂ = 0. ΔU = −3,0 × 10⁻⁴ J, ΔV = −75 V.</p>
+</details>
+</article>
+<article class="task">
+<h4>A3 · Sfida</h4>
+<p>E = 200 N/C verso destra, q = +5,0 μC. Un percorso va prima 0,50 m a destra, poi 0,20 m in alto e infine 0,30 m a sinistra. Confronta il lavoro con il percorso rettilineo e con il lavoro sul circuito chiuso ottenuto tornando ad A.</p><label class="screen">Il tuo svolgimento<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="hint">
+<summary>Aiuto 1 · Da dove partire</summary>
+<p>Annota il segno della proiezione su ogni tratto.</p>
+</details>
+<details class="hint">
+<summary>Aiuto 2 · Passaggio successivo</summary>
+<p>La proiezione totale è 0,50 − 0,30 m. Sul ritorno il suo segno si inverte.</p>
+</details>
+<details class="solution">
+<summary>Controlla la soluzione</summary>
+<p>W visita = (5,0 × 10⁻⁶)(200)(0,20) = +2,0 × 10⁻⁴ J, uguale al rettilineo. Ritorno −2,0 × 10⁻⁴ J, totale zero.</p>
+</details>
+</article>
+<article class="task">
+<h4>Recupero</h4>
+<p>Segna + o − accanto alle frecce forza e spostamento. Se sono opposte, quale segno ha il lavoro?</p><label class="screen">La tua risposta<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="solution">
+<summary>Controlla il ragionamento</summary>
+<p>Negativo, perché l’angolo tra le frecce è 180°.</p>
+</details>
+</article>
+<article class="task">
+<h4>Prima di chiudere</h4>
+<p>Una carica negativa viene spostata nel verso di E. Qual è il segno di W? Quale segno ha ΔU? Giustifica entrambi.</p><label class="screen">In una o due frasi<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
+<details class="solution">
+<summary>Controlla la risposta</summary>
+<p>La forza è opposta allo spostamento. W < 0 e ΔU > 0.</p>
+</details>
+</article>
+</section><nav class="page-sequence" aria-label="Progressione delle lezioni"><a class="pill-link" href="index.html">← Torna alla rotta</a><a class="pill-link" href="lezione-2.html">Lezione 2 →</a></nav>
+</main>
+</body>
+</html>

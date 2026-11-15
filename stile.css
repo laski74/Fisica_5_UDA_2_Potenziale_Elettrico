@@ -89,3 +89,302 @@ body.dark{--copper:#ffd196;--copper-light:#3c3123;--blue:#c1e4fc;--blue-light:#2
 .catalog-card{display:flex;flex-direction:column;gap:.2rem;padding:.8rem .95rem;color:var(--ink);background:var(--teal-bg);border:1px solid var(--rule);border-radius:.55rem;text-decoration:none}
 .catalog-card b{color:var(--teal)}.catalog-card small{color:var(--sub)}.catalog-card:hover{border-color:var(--accent)}
 .lab label,.lab select{max-width:100%;min-width:0}
+
+.route-work .route-theory{background:var(--teal-bg);padding:.5rem .4rem;border-radius:.35rem}.theory-main,.theory-aside,.theory-jump{display:block}.theory-aside{margin-top:.32rem;color:var(--sub);font-size:.94em}.theory-jump{font-size:.91em;margin-top:.28rem}.lesson-theory>b{display:block;color:var(--teal)}
+@media print{.theory-jump{display:none}}
+
+@media screen {
+  html { scroll-padding-top: var(--dock-offset, 8.2rem); }
+}
+.nav a[aria-current] {
+  background: var(--green);
+  color: var(--paper);
+  box-shadow: inset 0 -3px 0 var(--accent);
+}
+
+
+/* Alternativa di lettura per la LIM e per lo studio */
+@media screen {
+  body.study-edition {
+    --page:#edf0fc;
+    --paper:#fff;
+    --ink:#1d2140;
+    --sub:#4d5671;
+    --rule:#cbd2e6;
+    --green:#343087;
+    --teal:#2a427b;
+    --teal-bg:#edf2ff;
+    --amber:#794215;
+    --amber-bg:#fff2d7;
+    --blue:#354da0;
+    --blue-light:#eaf0ff;
+    --copper:#82431d;
+    --copper-light:#fff0d7;
+    --accent:#5843cb;
+    --white-line:#d8ddf1;
+    --stage:#f0f8fc;
+    --grid:#cadce8;
+    --marker:#ffec9a;
+    --marker-ink:#292340;
+    --formula-paper:#f0edff;
+    --formula-ink:#32266b;
+    --lab-paper:#e8f7f4;
+    --lab-ink:#104e4d;
+    --lesson-accent:#3e3a9a;
+    --lesson-band:#e7e9ff;
+    --lab-shadow:0 12px 36px #29286412;
+    font-size:1.08rem;
+    line-height:1.66;
+  }
+  body.study-edition.dark {
+    --page:#141626;
+    --paper:#1e2137;
+    --ink:#f3f2ff;
+    --sub:#c2c8e4;
+    --rule:#484e71;
+    --green:#c2b9ff;
+    --teal:#bdccff;
+    --teal-bg:#293254;
+    --amber:#ffd08c;
+    --amber-bg:#433520;
+    --blue:#adc5ff;
+    --blue-light:#28344e;
+    --copper:#ffd18d;
+    --copper-light:#483923;
+    --accent:#cabdff;
+    --white-line:#535679;
+    --stage:#172935;
+    --grid:#3a5264;
+    --marker:#664d20;
+    --marker-ink:#fff4cb;
+    --formula-paper:#332b59;
+    --formula-ink:#eee8ff;
+    --lab-paper:#193b40;
+    --lab-ink:#b4f1e1;
+    --lesson-accent:#c2b9ff;
+    --lesson-band:#29264c;
+    --lab-shadow:0 12px 36px #0004;
+  }
+  body.study-edition.dsa-mode { font-size:1.16rem; line-height:1.83; }
+
+  .study-edition .hero {
+    background:radial-gradient(ellipse at 77% 5%,#3a4287 0%,#252654 57%,#1c1d45 100%);
+    padding:1.45rem 0;
+    border-bottom:4px solid #f6c878;
+  }
+  .study-edition .hero h1 {
+    font-family:Georgia,"Instrument Serif",serif;
+    font-size:clamp(2.2rem,4.9vw,4.15rem);
+    line-height:1.03;
+    letter-spacing:-.045em;
+    max-width:19ch;
+    text-wrap:balance;
+    margin:.32rem 0 .58rem;
+  }
+  .study-edition .hero p { color:#e6e9ff; }
+  .study-edition .hero .meta { color:#ffde9c; }
+  .study-edition .hero-diagram {
+    background:#222858;
+    border-color:#7783c9;
+    max-height:10.5rem;
+    box-shadow:0 0 0 .5rem #b8c4ff18;
+  }
+  .study-edition .dock { border-bottom:1px solid var(--rule); }
+  .study-edition .nav a[aria-current] {
+    background:var(--green);
+    color:var(--paper);
+    box-shadow:inset 0 -3px 0 #f6c878;
+  }
+
+  .study-edition .sheet { border-radius:1rem; }
+  .study-edition #rotta { border-top-color:var(--green); }
+  .study-edition #rotta>h2,
+  .study-edition .study-map h2,
+  .study-edition .formularium h2 {
+    font-family:Georgia,"Instrument Serif",serif;
+    letter-spacing:-.035em;
+    line-height:1.13;
+    font-size:clamp(1.85rem,3.4vw,2.8rem);
+  }
+  .study-edition .route .card {
+    background:var(--teal-bg);
+    border-top:.28rem solid var(--accent);
+  }
+  .study-edition .route .card:nth-child(n+3):nth-child(-n+4) {
+    background:var(--lab-paper);
+    border-top-color:var(--lab-ink);
+  }
+  .study-edition .route .card:nth-child(n+5) {
+    background:var(--amber-bg);
+    border-top-color:var(--amber);
+  }
+  .study-edition .route-work .route-theory { background:var(--paper); }
+  .study-edition .route .card h4 { font-size:1.25rem; }
+
+  .study-edition .lesson {
+    border-top:1px solid var(--rule);
+  }
+  .study-edition #lezione-2, .study-edition #lezione-5 {
+    --lesson-band:var(--lab-paper);
+    --lesson-accent:var(--lab-ink);
+  }
+  .study-edition #lezione-3, .study-edition #lezione-6 {
+    --lesson-band:var(--amber-bg);
+    --lesson-accent:var(--amber);
+  }
+  .study-edition .lesson-heading {
+    padding:clamp(.9rem,3.5vw,1.85rem);
+    border-inline-start:.35rem solid var(--lesson-accent);
+    border-radius:.55rem .9rem .9rem .55rem;
+    background:var(--lesson-band);
+    margin-bottom:1.3rem;
+  }
+  .study-edition .lesson-heading .kicker { color:var(--lesson-accent); }
+  .study-edition .lesson-heading h2 {
+    font-family:Georgia,"Instrument Serif",serif;
+    font-size:clamp(1.75rem,4vw,3.05rem);
+    letter-spacing:-.035em;
+    color:var(--lesson-accent);
+    margin:.18rem 0 .55rem;
+  }
+  .study-edition .lesson-heading .goal { max-width:72ch; margin:0; }
+  .study-edition .lesson h3 { font-size:1.35rem; }
+  .study-edition .lesson .question {
+    background:var(--amber-bg);
+    border-inline-start:.3rem solid var(--amber);
+    padding:1rem 1.15rem;
+  }
+  .study-edition .question h3, .study-edition .example h3 { margin-top:0; }
+  .study-edition .question h3 { color:var(--amber); }
+  .study-edition .lab { background:var(--lab-paper); border-color:var(--rule); }
+  .study-edition .lab h4,
+  .study-edition .lab output { color:var(--lab-ink); }
+  .study-edition .theory-cycle {
+    background:transparent;
+    border:0;
+    border-top:1px solid var(--rule);
+    border-radius:0;
+    padding:1.1rem 0 .35rem;
+  }
+  .study-edition .theory-cycle h4 {
+    font-size:clamp(1.18rem,2.3vw,1.48rem);
+    letter-spacing:-.012em;
+    margin-bottom:.52rem;
+  }
+  .study-edition .theory-cycle>p {
+    max-width:73ch;
+    margin-block:.45rem .8rem;
+  }
+  .study-edition .theory-expanded :is(strong,mark.key-term), .study-edition .intro strong {
+    color:var(--marker-ink);
+    background:var(--marker);
+    font-weight:750;
+    border-radius:.12em;
+    padding-inline:.12em;
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
+  }
+  .study-edition .theory-expanded mark.key-term {
+    background:none;
+    color:var(--ink);
+    text-decoration:underline;
+    text-decoration-color:var(--accent);
+    text-underline-offset:.18em;
+    text-decoration-thickness:.095em;
+    padding:0;
+  }
+  .study-edition .theory-refs { background:var(--teal-bg); }
+  .study-edition .equation-grid { gap:.75rem; margin-top:.8rem; }
+  .study-edition .equation-tile {
+    background:var(--formula-paper);
+    border:1px solid var(--rule);
+    border-top:.23rem solid var(--accent);
+    padding:.86rem .75rem .72rem;
+  }
+  .study-edition .equation-tile math {
+    color:var(--formula-ink);
+    font-size:1.27rem;
+    margin:.3rem 0 .7rem;
+  }
+  .study-edition .example {
+    background:var(--blue-light);
+    border-inline-start:.3rem solid var(--blue);
+    padding:1rem 1.15rem;
+  }
+  .study-edition .example li::marker { color:var(--blue); font-weight:800; }
+  .study-edition .story {
+    background:var(--amber-bg);
+    padding:1rem 1.15rem;
+    border-inline-start:.3rem solid var(--amber);
+  }
+  .study-edition .story h4 { color:var(--amber); }
+  .study-edition .book-bank h3 { color:var(--blue); }
+  .study-edition .book-task:is(.is-aula,.is-casa) {
+    border-inline-start:.24rem solid var(--lab-ink);
+  }
+  .study-edition .book-level:is(.aula,.casa) {
+    background:var(--lab-paper);
+    color:var(--lab-ink);
+  }
+
+  .study-edition .atlas-map .map-node { background:var(--teal-bg); }
+  .study-edition .atlas-map .map-node:nth-child(n+3):nth-child(-n+5) { background:var(--lab-paper); }
+  .study-edition .atlas-map .map-node:nth-child(n+6) { background:var(--amber-bg); }
+  .study-edition .atlas-map .map-node h3 { font-size:1.45rem; }
+  .study-edition .zero-grid article { background:var(--amber-bg); }
+  .study-edition .formula-topic { background:var(--paper); }
+  .study-edition .formula-topic:nth-of-type(2n) { background:var(--teal-bg); }
+}
+@media screen and (max-width:40rem) {
+  .study-edition .hero { padding:.95rem 0 1.12rem; }
+  .study-edition .hero h1 { max-width:none; }
+  .study-edition .lesson-heading { padding:.8rem .75rem; }
+  .study-edition .equation-tile math { font-size:1.13rem; }
+}
+@media print {
+  .study-edition .lesson-heading { break-after:avoid; }
+  .study-edition mark.key-term { color:inherit; background:transparent; }
+}
+
+@media screen {
+  .study-edition .concept-figure { margin: .8rem 0 1.35rem; }
+  .study-edition .concept-viewport {
+    overflow-x: auto;
+    background: var(--page);
+    border: 1px solid var(--rule);
+    border-radius: .75rem;
+    padding: .45rem;
+  }
+  .study-edition .concept-diagram { display: block; width: 100%; min-width: 815px; height: auto; }
+  .study-edition .concept-figure figcaption { margin-top: .42rem; color: var(--sub); font-size: .9rem; }
+  .study-edition .concept-edges path { fill: none; stroke: var(--teal); stroke-width: 2.3; stroke-linejoin: round; }
+  .study-edition #concept-arrow path { fill: var(--teal); }
+  .study-edition .concept-node rect { stroke: var(--rule); stroke-width: 1.3; fill: var(--paper); }
+  .study-edition .concept-node.field rect { fill: var(--lab-paper); stroke: var(--lab-ink); }
+  .study-edition .concept-node.potential rect { fill: var(--formula-paper); stroke: var(--accent); }
+  .study-edition .concept-node.energy rect { fill: var(--amber-bg); stroke: var(--amber); }
+  .study-edition .concept-node.source rect { fill: var(--teal-bg); stroke: var(--green); }
+  .study-edition .concept-diagram text { text-anchor: middle; fill: var(--ink); }
+  .study-edition .concept-diagram .concept-name { font-size: 16.5px; font-weight: 800; }
+  .study-edition .concept-diagram .concept-detail { font-size: 13px; font-weight: 500; fill: var(--sub); }
+  .study-edition .concept-node:hover rect, .study-edition .concept-node:focus-visible rect {
+    stroke: var(--accent);
+    stroke-width: 3;
+  }
+}
+
+@media screen {
+  .study-edition.inner-page .hero { padding: .68rem 0 .79rem; }
+  .study-edition.inner-page .hero h1 { font-size: clamp(1.48rem,3.4vw,2.45rem); max-width:none; margin:.17rem 0 .26rem; }
+  .study-edition.inner-page .hero-layout { grid-template-columns: 1fr; }
+  .study-edition.inner-page .hero-diagram { display: none; }
+  .study-edition.inner-page .hero .meta, .study-edition.inner-page .hero p { font-size:.8rem; }
+  .study-edition .page-sequence { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.75rem; margin-top:1.4rem; }
+  .study-edition .page-sequence a { font-weight:700; }
+  .study-edition .print-collection .print-line { display:block; height:1.45rem; border-bottom:1px solid var(--rule); }
+  .study-edition .print-collection .print-grid { display:block; height:3rem; border:1px solid var(--rule); }
+}
+@media print {
+  .student main > section:is(.lesson,.assessment):first-of-type { break-before:auto; margin-top:1rem; }
+  .page-sequence { display:none!important; }
+}
