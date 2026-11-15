@@ -1,8 +1,280 @@
 <!doctype html>
 <html lang="it">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Fisica · Campo elettrico e potenziale · LIM e studio</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23184939'/%3E%3Cpath d='M23 14v36m18-36v36M6 32h17m18 0h17' stroke='%23daf7e5' stroke-width='5'/%3E%3Cpath d='M9 12h10m-5-5v10m32 0h10' stroke='%23ffc282' stroke-width='3'/%3E%3C/svg%3E"><link rel="stylesheet" href="stile.css"><script>window.MathJax={options:{enableMenu:false}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script><script defer src="interazioni.js"></script><script defer src="simulazioni.js"></script>
+<style>
+/* Alternativa di lettura per la LIM e per lo studio */
+@media screen {
+  body.study-edition {
+    --page:#edf0fc;
+    --paper:#fff;
+    --ink:#1d2140;
+    --sub:#4d5671;
+    --rule:#cbd2e6;
+    --green:#343087;
+    --teal:#2a427b;
+    --teal-bg:#edf2ff;
+    --amber:#794215;
+    --amber-bg:#fff2d7;
+    --blue:#354da0;
+    --blue-light:#eaf0ff;
+    --copper:#82431d;
+    --copper-light:#fff0d7;
+    --accent:#5843cb;
+    --white-line:#d8ddf1;
+    --stage:#f0f8fc;
+    --grid:#cadce8;
+    --marker:#ffec9a;
+    --marker-ink:#292340;
+    --formula-paper:#f0edff;
+    --formula-ink:#32266b;
+    --lab-paper:#e8f7f4;
+    --lab-ink:#104e4d;
+    --lesson-accent:#3e3a9a;
+    --lesson-band:#e7e9ff;
+    --lab-shadow:0 12px 36px #29286412;
+    font-size:1.08rem;
+    line-height:1.66;
+  }
+  body.study-edition.dark {
+    --page:#141626;
+    --paper:#1e2137;
+    --ink:#f3f2ff;
+    --sub:#c2c8e4;
+    --rule:#484e71;
+    --green:#c2b9ff;
+    --teal:#bdccff;
+    --teal-bg:#293254;
+    --amber:#ffd08c;
+    --amber-bg:#433520;
+    --blue:#adc5ff;
+    --blue-light:#28344e;
+    --copper:#ffd18d;
+    --copper-light:#483923;
+    --accent:#cabdff;
+    --white-line:#535679;
+    --stage:#172935;
+    --grid:#3a5264;
+    --marker:#664d20;
+    --marker-ink:#fff4cb;
+    --formula-paper:#332b59;
+    --formula-ink:#eee8ff;
+    --lab-paper:#193b40;
+    --lab-ink:#b4f1e1;
+    --lesson-accent:#c2b9ff;
+    --lesson-band:#29264c;
+    --lab-shadow:0 12px 36px #0004;
+  }
+  body.study-edition.dsa-mode { font-size:1.16rem; line-height:1.83; }
+
+  .study-edition .hero {
+    background:radial-gradient(ellipse at 77% 5%,#3a4287 0%,#252654 57%,#1c1d45 100%);
+    padding:1.45rem 0;
+    border-bottom:4px solid #f6c878;
+  }
+  .study-edition .hero h1 {
+    font-family:Georgia,"Instrument Serif",serif;
+    font-size:clamp(2.2rem,4.9vw,4.15rem);
+    line-height:1.03;
+    letter-spacing:-.045em;
+    max-width:19ch;
+    text-wrap:balance;
+    margin:.32rem 0 .58rem;
+  }
+  .study-edition .hero p { color:#e6e9ff; }
+  .study-edition .hero .meta { color:#ffde9c; }
+  .study-edition .hero-diagram {
+    background:#222858;
+    border-color:#7783c9;
+    max-height:10.5rem;
+    box-shadow:0 0 0 .5rem #b8c4ff18;
+  }
+  .study-edition .dock { border-bottom:1px solid var(--rule); }
+  .study-edition .nav a[aria-current="location"] {
+    background:var(--green);
+    color:var(--paper);
+    box-shadow:inset 0 -3px 0 #f6c878;
+  }
+
+  .study-edition .sheet { border-radius:1rem; }
+  .study-edition #rotta { border-top-color:var(--green); }
+  .study-edition #rotta>h2,
+  .study-edition .study-map h2,
+  .study-edition .formularium h2 {
+    font-family:Georgia,"Instrument Serif",serif;
+    letter-spacing:-.035em;
+    line-height:1.13;
+    font-size:clamp(1.85rem,3.4vw,2.8rem);
+  }
+  .study-edition .route .card {
+    background:var(--teal-bg);
+    border-top:.28rem solid var(--accent);
+  }
+  .study-edition .route .card:nth-child(n+3):nth-child(-n+4) {
+    background:var(--lab-paper);
+    border-top-color:var(--lab-ink);
+  }
+  .study-edition .route .card:nth-child(n+5) {
+    background:var(--amber-bg);
+    border-top-color:var(--amber);
+  }
+  .study-edition .route-work .route-theory { background:var(--paper); }
+  .study-edition .route .card h4 { font-size:1.25rem; }
+
+  .study-edition .lesson {
+    border-top:1px solid var(--rule);
+  }
+  .study-edition #lezione-2, .study-edition #lezione-5 {
+    --lesson-band:var(--lab-paper);
+    --lesson-accent:var(--lab-ink);
+  }
+  .study-edition #lezione-3, .study-edition #lezione-6 {
+    --lesson-band:var(--amber-bg);
+    --lesson-accent:var(--amber);
+  }
+  .study-edition .lesson-heading {
+    padding:clamp(.9rem,3.5vw,1.85rem);
+    border-inline-start:.35rem solid var(--lesson-accent);
+    border-radius:.55rem .9rem .9rem .55rem;
+    background:var(--lesson-band);
+    margin-bottom:1.3rem;
+  }
+  .study-edition .lesson-heading .kicker { color:var(--lesson-accent); }
+  .study-edition .lesson-heading h2 {
+    font-family:Georgia,"Instrument Serif",serif;
+    font-size:clamp(1.75rem,4vw,3.05rem);
+    letter-spacing:-.035em;
+    color:var(--lesson-accent);
+    margin:.18rem 0 .55rem;
+  }
+  .study-edition .lesson-heading .goal { max-width:72ch; margin:0; }
+  .study-edition .lesson h3 { font-size:1.35rem; }
+  .study-edition .lesson .question {
+    background:var(--amber-bg);
+    border-inline-start:.3rem solid var(--amber);
+    padding:1rem 1.15rem;
+  }
+  .study-edition .question h3, .study-edition .example h3 { margin-top:0; }
+  .study-edition .question h3 { color:var(--amber); }
+  .study-edition .lab { background:var(--lab-paper); border-color:var(--rule); }
+  .study-edition .lab h4,
+  .study-edition .lab output { color:var(--lab-ink); }
+  .study-edition .theory-cycle {
+    background:transparent;
+    border:0;
+    border-top:1px solid var(--rule);
+    border-radius:0;
+    padding:1.1rem 0 .35rem;
+  }
+  .study-edition .theory-cycle h4 {
+    font-size:clamp(1.18rem,2.3vw,1.48rem);
+    letter-spacing:-.012em;
+    margin-bottom:.52rem;
+  }
+  .study-edition .theory-cycle>p {
+    max-width:73ch;
+    margin-block:.45rem .8rem;
+  }
+  .study-edition .theory-expanded :is(strong,mark.key-term), .study-edition .intro strong {
+    color:var(--marker-ink);
+    background:var(--marker);
+    font-weight:750;
+    border-radius:.12em;
+    padding-inline:.12em;
+    box-decoration-break:clone;
+    -webkit-box-decoration-break:clone;
+  }
+  .study-edition .theory-expanded mark.key-term {
+    background:none;
+    color:var(--ink);
+    text-decoration:underline;
+    text-decoration-color:var(--accent);
+    text-underline-offset:.18em;
+    text-decoration-thickness:.095em;
+    padding:0;
+  }
+  .study-edition .theory-refs { background:var(--teal-bg); }
+  .study-edition .equation-grid { gap:.75rem; margin-top:.8rem; }
+  .study-edition .equation-tile {
+    background:var(--formula-paper);
+    border:1px solid var(--rule);
+    border-top:.23rem solid var(--accent);
+    padding:.86rem .75rem .72rem;
+  }
+  .study-edition .equation-tile math {
+    color:var(--formula-ink);
+    font-size:1.27rem;
+    margin:.3rem 0 .7rem;
+  }
+  .study-edition .example {
+    background:var(--blue-light);
+    border-inline-start:.3rem solid var(--blue);
+    padding:1rem 1.15rem;
+  }
+  .study-edition .example li::marker { color:var(--blue); font-weight:800; }
+  .study-edition .story {
+    background:var(--amber-bg);
+    padding:1rem 1.15rem;
+    border-inline-start:.3rem solid var(--amber);
+  }
+  .study-edition .story h4 { color:var(--amber); }
+  .study-edition .book-bank h3 { color:var(--blue); }
+  .study-edition .book-task:is(.is-aula,.is-casa) {
+    border-inline-start:.24rem solid var(--lab-ink);
+  }
+  .study-edition .book-level:is(.aula,.casa) {
+    background:var(--lab-paper);
+    color:var(--lab-ink);
+  }
+
+  .study-edition .atlas-map .map-node { background:var(--teal-bg); }
+  .study-edition .atlas-map .map-node:nth-child(n+3):nth-child(-n+5) { background:var(--lab-paper); }
+  .study-edition .atlas-map .map-node:nth-child(n+6) { background:var(--amber-bg); }
+  .study-edition .atlas-map .map-node h3 { font-size:1.45rem; }
+  .study-edition .zero-grid article { background:var(--amber-bg); }
+  .study-edition .formula-topic { background:var(--paper); }
+  .study-edition .formula-topic:nth-of-type(2n) { background:var(--teal-bg); }
+}
+@media screen and (max-width:40rem) {
+  .study-edition .hero { padding:.95rem 0 1.12rem; }
+  .study-edition .hero h1 { max-width:none; }
+  .study-edition .lesson-heading { padding:.8rem .75rem; }
+  .study-edition .equation-tile math { font-size:1.13rem; }
+}
+@media print {
+  .study-edition .lesson-heading { break-after:avoid; }
+  .study-edition mark.key-term { color:inherit; background:transparent; }
+}
+
+@media screen {
+  .study-edition .concept-figure { margin: .8rem 0 1.35rem; }
+  .study-edition .concept-viewport {
+    overflow-x: auto;
+    background: var(--page);
+    border: 1px solid var(--rule);
+    border-radius: .75rem;
+    padding: .45rem;
+  }
+  .study-edition .concept-diagram { display: block; width: 100%; min-width: 815px; height: auto; }
+  .study-edition .concept-figure figcaption { margin-top: .42rem; color: var(--sub); font-size: .9rem; }
+  .study-edition .concept-edges path { fill: none; stroke: var(--teal); stroke-width: 2.3; stroke-linejoin: round; }
+  .study-edition #concept-arrow path { fill: var(--teal); }
+  .study-edition .concept-node rect { stroke: var(--rule); stroke-width: 1.3; fill: var(--paper); }
+  .study-edition .concept-node.field rect { fill: var(--lab-paper); stroke: var(--lab-ink); }
+  .study-edition .concept-node.potential rect { fill: var(--formula-paper); stroke: var(--accent); }
+  .study-edition .concept-node.energy rect { fill: var(--amber-bg); stroke: var(--amber); }
+  .study-edition .concept-node.source rect { fill: var(--teal-bg); stroke: var(--green); }
+  .study-edition .concept-diagram text { text-anchor: middle; fill: var(--ink); }
+  .study-edition .concept-diagram .concept-name { font-size: 16.5px; font-weight: 800; }
+  .study-edition .concept-diagram .concept-detail { font-size: 13px; font-weight: 500; fill: var(--sub); }
+  .study-edition .concept-node:hover rect, .study-edition .concept-node:focus-visible rect {
+    stroke: var(--accent);
+    stroke-width: 3;
+  }
+}
+
+</style>
 </head>
-<body class="student"><a href="#contenuto" class="skip">Vai al contenuto</a>
+<body class="student study-edition"><a href="#contenuto" class="skip">Vai al contenuto</a>
 <header class="hero">
 <div class="wrap hero-layout">
 <div>
@@ -38,6 +310,8 @@
 <h4>Il lavoro elettrico dipende dalla strada?</h4>
 <p>Prevedere e calcolare il segno del lavoro e della variazione di energia potenziale.</p>
 <ul class="route-work">
+<li class="route-theory"><b>Teoria</b><span><span class="theory-main">Cap. 18, pp. 43–44 · Lavoro e variazione di energia potenziale.</span><span class="theory-aside">p. 46 · Primo richiamo alla differenza di potenziale.</span><a class="theory-jump" href="#teoria-1">Apri la teoria e le pagine collegate</a></span>
+</li>
 <li><b>In aula</b><span><a href="#libro-18-2">Cap. 18 · p. 64, n. 2</a> · poi il riscontro finale.</span>
 </li>
 <li><b>A casa · 40′</b><span>15′ teoria e formule, 20′ <a href="#libro-18-16">Cap. 18 · p. 67, n. 16</a>. 5′ correzione.</span>
@@ -55,6 +329,8 @@
 <h4>Il campo attraversa la scatola?</h4>
 <p>Sommare vettori di campo e distinguere il campo locale dal flusso netto.</p>
 <ul class="route-work">
+<li class="route-theory"><b>Teoria</b><span><span class="theory-main">Cap. 17 · pp. 11–14 campo e sovrapposizione; pp. 15–18 linee di campo; pp. 19–22 flusso e teorema di Gauss.</span><a class="theory-jump" href="#teoria-2">Apri la teoria e le pagine collegate</a></span>
+</li>
 <li><b>In aula</b><span><a href="#libro-17-38">Cap. 17 · p. 35, n. 38</a> · prima disegna E in B1.</span>
 </li>
 <li><b>A casa · 40′</b><span>15′ teoria e formule, 20′ <a href="#libro-17-40">Cap. 17 · p. 36, n. 40</a>. 5′ correzione.</span>
@@ -72,6 +348,8 @@
 <h4>Quanto costa montare tre cariche?</h4>
 <p>Calcolare U sommando ogni coppia una volta, con distanze e segni corretti.</p>
 <ul class="route-work">
+<li class="route-theory"><b>Teoria</b><span><span class="theory-main">Cap. 18, pp. 44–45 · Energia di una coppia e di più cariche.</span><span class="theory-aside">A p. 45, esempio 1 sulle tre coppie.</span><a class="theory-jump" href="#teoria-3">Apri la teoria e le pagine collegate</a></span>
+</li>
 <li><b>In aula</b><span><a href="#libro-18-3">Cap. 18 · p. 64, n. 3</a> · poi il riscontro finale.</span>
 </li>
 <li><b>A casa · 40′</b><span>15′ teoria e formule, 20′ <a href="#libro-18-6">Cap. 18 · p. 64, n. 6</a>. 5′ correzione.</span>
@@ -89,6 +367,8 @@
 <h4>Una mappa dei volt</h4>
 <p>Passare dal potenziale al lavoro e leggere direzione e intensità del campo da una mappa.</p>
 <ul class="route-work">
+<li class="route-theory"><b>Teoria</b><span><span class="theory-main">Cap. 18 · pp. 46–48 potenziale, differenza di potenziale ed elettronvolt; pp. 49–50 potenziale di cariche puntiformi; pp. 50–51 equipotenziali.</span><span class="theory-aside">Facoltativi · pp. 52–53 (esempio 5) dal potenziale al campo; pp. 53–54 circuitazione.</span><a class="theory-jump" href="#teoria-4">Apri la teoria e le pagine collegate</a></span>
+</li>
 <li><b>In aula</b><span><a href="#libro-18-26">Cap. 18 · p. 69, n. 26</a> · poi il riscontro finale.</span>
 </li>
 <li><b>A casa · 40′</b><span>15′ teoria e formule, 20′ <a href="#libro-18-32">Cap. 18 · p. 69, n. 32</a>. 5′ correzione.</span>
@@ -106,6 +386,8 @@
 <h4>Come si fa spazio alla carica?</h4>
 <p>Calcolare capacità e carica e identificare quale grandezza rimane fissata.</p>
 <ul class="route-work">
+<li class="route-theory"><b>Teoria</b><span><span class="theory-main">Cap. 18, pp. 54–56 · Capacità, condensatore piano e dielettrico.</span><span class="theory-aside">p. 57, esempio 7 · Applicazione alla tastiera.</span><a class="theory-jump" href="#teoria-5">Apri la teoria e le pagine collegate</a></span>
+</li>
 <li><b>In aula</b><span><a href="#libro-18-40">Cap. 18 · p. 72, n. 40</a> · poi il riscontro finale.</span>
 </li>
 <li><b>A casa · 40′</b><span>15′ teoria e formule, 20′ <a href="#libro-18-46">Cap. 18 · p. 73, n. 46</a>. 5′ correzione.</span>
@@ -123,6 +405,8 @@
 <h4>Dove finisce l’energia?</h4>
 <p>Calcolare l’energia immagazzinata e scegliere la relazione più adatta in problemi misti.</p>
 <ul class="route-work">
+<li class="route-theory"><b>Teoria</b><span><span class="theory-main">Cap. 18, pp. 57–58 · Energia immagazzinata e applicazione al flash.</span><span class="theory-aside">A p. 57 inizia dal paragrafo sull’energia. L’autoverifica del libro è a p. 78.</span><a class="theory-jump" href="#teoria-6">Apri la teoria e le pagine collegate</a></span>
+</li>
 <li><b>In aula</b><span><a href="#libro-18-48">Cap. 18 · p. 73, n. 48</a> · poi i quesiti indicati nell’autoverifica.</span>
 </li>
 <li><b>A casa · 40′</b><span>15′ teoria e formule, 20′ <a href="#libro-18-58">Cap. 18 · p. 74, n. 58</a> e due quesiti di autoverifica. 5′ correzione.</span>
@@ -145,12 +429,10 @@
 </div>
 </section>
 <section class="sheet lesson" id="lezione-1">
-<p class="kicker">Lezione 1</p>
+<header class="lesson-heading"><p class="kicker">Lezione 1</p>
 <h2>Il lavoro elettrico dipende dalla strada?</h2>
-<p class="goal">Lavoro, energia potenziale, differenza di potenziale · Prevedere e calcolare il segno del lavoro e della variazione di energia potenziale.</p>
+<p class="goal">Lavoro, energia potenziale, differenza di potenziale · Prevedere e calcolare il segno del lavoro e della variazione di energia potenziale.</p></header>
 <div class="screen">
-<p class="book"><a target="_blank" rel="noopener" href="immagini/43.png">Cap. 18, pp. 43–44 · apri p. 43</a>
-</p>
 <div class="question">
 <h3>Prima di calcolare</h3>
 <p>Due corrieri trasportano la stessa carica da A a B fra due piastre. Uno va dritto, l’altro fa il giro dell’isolato. Su quale carica il campo compie più lavoro?</p><label class="screen">Prima di usare il modello, ordina i due percorsi per lavoro e scrivi che cosa cambieresti nella previsione se la carica fosse negativa.<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
@@ -162,14 +444,16 @@
 <form><label>Percorso <select name="via"><option value="diretto">Diretto</option><option value="giro">Giro dell’isolato</option></select></label><label>Carica <select name="q"><option value="2">+2 μC</option><option value="-2">−2 μC</option></select></label><label>Spostamento orizzontale Δx (m) <input name="dx" type="range" min="0" max="0.5" step="0.05" value="0.35"> <span class="range-value" aria-hidden="true">0.35</span></label><button type="reset">Ripristina valori</button>
 </form><svg viewBox="0 0 660 300" role="img" aria-label="Percorsi della carica in un campo uniforme"></svg><output aria-live="polite"></output><noscript>Per interagire con il modello abilita JavaScript.</noscript>
 </div>
-<h3>Formalizziamo</h3>
+<h3 id="teoria-1">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 18, pp. 43–44 · Lavoro e variazione di energia potenziale.</span><span class="theory-aside">p. 46 · Primo richiamo alla differenza di potenziale.</span>
+</p>
 <div class="theory-expanded">
 <p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/43.png">p. 43 · Forza conservativa</a> · <a target="_blank" rel="noopener" href="immagini/44.png">p. 44 · Lavoro in campo uniforme</a>
 </p>
 <section class="theory-cycle">
 <h4>Prima la forza, poi il lavoro</h4>
-<p>Il campo è una proprietà dello spazio attorno alle sorgenti. Quando ci metti una carica q₀, la forza è determinata dal prodotto di q₀ per il vettore campo. Su una carica positiva le frecce forza e campo puntano nello stesso verso, mentre su una negativa sono opposte.</p>
-<p>Per capire il lavoro disegna <strong>forza e spostamento</strong>. Conta la parte dello spostamento lungo la forza. Se le frecce sono parallele e concordi il lavoro è positivo, se sono opposte è negativo, se formano 90° è zero. Se il campo è orizzontale e uniforme basta la variazione orizzontale della posizione.</p>
+<p>Il campo è una proprietà dello spazio attorno alle sorgenti. Quando ci metti una carica q₀, la forza è determinata dal prodotto di q₀ per il vettore campo. Su una <mark class="key-term">carica positiva</mark> le frecce forza e campo puntano nello stesso verso, mentre su una negativa sono opposte.</p>
+<p>Per capire il lavoro disegna <strong>forza e spostamento</strong>. Conta la parte dello <mark class="key-term">spostamento lungo la forza</mark>. Se le frecce sono parallele e concordi il lavoro è positivo, se sono opposte è negativo, se formano 90° è zero. Se il campo è orizzontale e uniforme basta la variazione orizzontale della posizione.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><mover accent="true"><mi>F</mi><mo>→</mo></mover><mo>=</mo><msub><mi>q</mi><mn>0</mn></msub><mover accent="true"><mi>E</mi><mo>→</mo></mover></math>
 <p>Forza in N. Il segno di q₀ decide il verso della forza rispetto al campo.</p>
@@ -184,7 +468,7 @@
 </section>
 <section class="theory-cycle">
 <h4>Che cosa significa «conservativa»</h4>
-<p>Una forza è conservativa quando il suo lavoro fra due punti dipende soltanto da punto iniziale e finale. Lo stesso principio si può leggere su un giro chiuso: tornare al punto di partenza dà lavoro totale zero. Su ciascun tratto, invece, il lavoro può essere diverso da zero.</p>
+<p>Una forza è conservativa quando il suo lavoro fra due punti dipende soltanto da <mark class="key-term">punto iniziale e finale</mark>. Lo stesso principio si può leggere su un giro chiuso: tornare al punto di partenza dà lavoro totale zero. Su ciascun tratto, invece, il lavoro può essere diverso da zero.</p>
 <p>L’energia potenziale è una funzione della configurazione. La sua variazione è opposta al lavoro della forza conservativa. Lo zero si può scegliere. Per esempio nel modello di p. 44, con il campo verticale verso il basso e h misurata verso l’alto dalla piastra negativa, si può porre U = q₀Eh.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><mrow><mi>Δ</mi><mi>U</mi></mrow><mo>=</mo><msub><mi>U</mi><mi>B</mi></msub><mo>−</mo><msub><mi>U</mi><mi>A</mi></msub><mo>=</mo><mo>−</mo><msub><mi>W</mi><mrow><mi>A</mi><mo>→</mo><mi>B</mi></mrow></msub></math>
@@ -197,7 +481,7 @@
 </section>
 <section class="theory-cycle">
 <h4>Un bilancio, due punti di vista</h4>
-<p>Se lasci libera una carica e il campo è l’unica forza che fa lavoro, l’energia cinetica cresce quando U diminuisce. Se invece tu sposti la carica lentamente, mantenendo trascurabile la variazione di energia cinetica, il tuo lavoro compensa quello del campo. In questo caso <strong>lavoro dell’agente esterno = ΔU</strong>.</p>
+<p>Se lasci libera una carica e il campo è l’unica forza che fa lavoro, l’energia cinetica cresce quando U diminuisce. Se invece tu sposti la carica lentamente, mantenendo trascurabile la <mark class="key-term">variazione di energia cinetica</mark>, il tuo lavoro compensa quello del campo. In questo caso <strong>lavoro dell’agente esterno = ΔU</strong>.</p>
 <p><strong>Controllo di segno.</strong> Campo verso destra, carica negativa spostata verso destra: il campo tira verso sinistra, W è negativo e U aumenta. Il potenziale diminuisce andando verso destra, perché la mappa di V resta la stessa qualunque carica scegli di usare.</p>
 </section>
 </div><aside class="story">
@@ -383,12 +667,10 @@
 </article>
 </section>
 <section class="sheet lesson" id="lezione-2">
-<p class="kicker">Lezione 2</p>
+<header class="lesson-heading"><p class="kicker">Lezione 2</p>
 <h2>Il campo attraversa la scatola?</h2>
-<p class="goal">Campo, sovrapposizione, linee, flusso e Gauss · Sommare vettori di campo e distinguere il campo locale dal flusso netto.</p>
+<p class="goal">Campo, sovrapposizione, linee, flusso e Gauss · Sommare vettori di campo e distinguere il campo locale dal flusso netto.</p></header>
 <div class="screen">
-<p class="book"><a target="_blank" rel="noopener" href="immagini/cap17-20-21.png">Cap. 17, pp. 12–22 · apri pp. 20–21</a>
-</p>
 <div class="question">
 <h3>Prima di calcolare</h3>
 <p>Immagina una scatola trasparente in un campo elettrico. Entrano tante linee quante ne escono. Puoi concludere che nella scatola il campo è nullo?</p><label class="screen">Disegna che cosa succede alle frecce quando togli la carica interna e lasci una sorgente all’esterno. Prevedi campo e flusso separatamente.<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
@@ -401,20 +683,22 @@
 </form><svg viewBox="0 0 660 300" role="img" aria-label="Linee di campo e sezione di una superficie gaussiana"></svg><output aria-live="polite"></output>
 <p class="book">La circonferenza tratteggiata è una sezione di una superficie sferica chiusa. Le curve mostrano alcune linee di campo. La freccia più spessa rappresenta E in P. P ha ordinata fissa di 0,20 m.</p><noscript>Per interagire con il modello abilita JavaScript.</noscript>
 </div>
-<h3>Formalizziamo</h3>
+<h3 id="teoria-2">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 17 · pp. 11–14 campo e sovrapposizione; pp. 15–18 linee di campo; pp. 19–22 flusso e teorema di Gauss.</span>
+</p>
 <div class="theory-expanded">
-<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/cap17-20-21.png">cap. 17, pp. 20–21 · Flusso e Gauss</a>
+<p class="book theory-refs">pp. 12–13 · Definizione e sovrapposizione · pp. 16–17 · Linee di campo · <a target="_blank" rel="noopener" href="immagini/cap17-20-21.png">pp. 20–21 · Flusso e Gauss</a>
 </p>
 <section class="theory-cycle">
 <h4>Campo elettrico, sorgenti e carica di prova</h4>
 <p>Il <strong>campo elettrico in P</strong> è il rapporto fra la forza elettrica sulla piccola carica di prova posta in P e la sua carica. Nel modello ideale si considera una carica di prova abbastanza piccola da lasciare le sorgenti nella configurazione di partenza. Per individuare il verso di E si prende una carica di prova positiva.</p>
-<p>Per una sorgente puntiforme, il campo è radiale. Raddoppiare r riduce il modulo a un quarto. Dove ci sono più cariche, disegna prima le frecce di ciascuna. Per i vettori su un asse somma le componenti con segno. Per contributi obliqui usa le componenti lungo gli assi e ricostruisci il vettore.</p>
+<p>Per una <mark class="key-term">sorgente puntiforme</mark>, il campo è radiale. Raddoppiare r riduce il modulo a un quarto. Dove ci sono più cariche, disegna prima le frecce di ciascuna. Per i vettori su un asse somma le componenti con segno. Per contributi obliqui usa le componenti lungo gli assi e ricostruisci il vettore.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><mover accent="true"><mi>E</mi><mo>→</mo></mover><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mover accent="true"><mi>F</mi><mo>→</mo></mover><msub><mi>q</mi><mn>0</mn></msub></mfrac></math>
 <p>Campo in P, in N/C. q₀ è una carica di prova che non altera sensibilmente le sorgenti.</p>
 </div>
 <div class="equation-tile"><math display="block"><mi>E</mi><mo>=</mo><mi>k</mi><mfrac><mrow><mo>|</mo><mi>Q</mi><mo>|</mo></mrow><msup><mi>r</mi><mn>2</mn></msup></mfrac></math>
-<p>Modulo del campo di una sorgente puntiforme nel vuoto. r è la distanza fra sorgente e punto.</p>
+<p>Modulo del campo di una <mark class="key-term">sorgente puntiforme</mark> nel vuoto. r è la distanza fra sorgente e punto.</p>
 </div>
 <div class="equation-tile"><math display="block"><msub><mi><mover accent="true"><mi>E</mi><mo>→</mo></mover></mi><mtext>tot</mtext></msub><mo>=</mo><msub><mover accent="true"><mi>E</mi><mo>→</mo></mover><mn>1</mn></msub><mo>+</mo><msub><mover accent="true"><mi>E</mi><mo>→</mo></mover><mn>2</mn></msub><mo>+</mo><mo>…</mo></math>
 <p>Somma vettoriale. Su un asse, somma le componenti con il loro segno.</p>
@@ -423,20 +707,20 @@
 </section>
 <section class="theory-cycle">
 <h4>Leggere le linee di campo</h4>
-<p>Una linea di campo è una curva tangente a E dove E è definito e diverso da zero. La freccia indica il verso che avrebbe la forza su una carica positiva. Le linee escono dalle cariche positive e arrivano a quelle negative o si estendono fino ai bordi della regione rappresentata. Dove si incrociassero ci sarebbero due direzioni per lo stesso vettore. Nei punti con E = 0 la direzione del campo è indeterminata.</p>
+<p>Una linea di campo è una curva <mark class="key-term">tangente a E</mark> dove E è definito e diverso da zero. La freccia indica il verso che avrebbe la forza su una carica positiva. Le linee escono dalle cariche positive e arrivano a quelle negative o si estendono fino ai bordi della regione rappresentata. Dove si incrociassero ci sarebbero due direzioni per lo stesso vettore. Nei punti con E = 0 la direzione del campo è indeterminata.</p>
 <p>Due positive identiche hanno campo nullo nel punto medio. Tra una positiva e una negativa uguali in modulo, invece, le due frecce nel punto medio puntano entrambe verso la negativa. Le linee descrivono il campo nello spazio. La traiettoria di una particella dipende anche dalla velocità iniziale.</p>
 </section>
 <section class="theory-cycle">
 <h4>Flusso, normale e superficie chiusa</h4>
-<p>Il <strong>flusso</strong> misura il contributo della componente di E perpendicolare alla superficie. Per un piano, scegli una normale e proietta E su quella direzione. La formula usa l’angolo con la normale. Per una superficie curva immaginiamo piccoli elementi piani e sommiamo i contributi. In una superficie chiusa ogni normale si orienta verso l’esterno.</p>
-<p>Il <strong>teorema di Gauss</strong> lega il flusso netto uscente alla somma algebrica delle cariche racchiuse. Una carica esterna può cambiare E in ogni punto senza cambiare il totale. Per un campo uniforme che attraversa una scatola vuota, i contributi entranti e uscenti si compensano.</p>
-<p>La legge di Gauss vale per qualunque superficie chiusa ben definita che non attraversi le sorgenti puntiformi. Per trovare E da Φ serve anche un argomento di simmetria. Per una sfera centrata su una singola carica positiva, E è radiale e ha lo stesso modulo su tutta la sfera. Si ottiene E · 4πr² = Q/ε₀ e quindi la legge dell’inverso del quadrato.</p>
+<p>Il <strong>flusso</strong> misura il contributo della componente di E perpendicolare alla superficie. Per un piano, scegli una normale e proietta E su quella direzione. La formula usa l’angolo con la normale. Per una superficie curva immaginiamo piccoli elementi piani e sommiamo i contributi. In una <mark class="key-term">superficie chiusa</mark> ogni normale si orienta verso l’esterno.</p>
+<p>Il <strong>teorema di Gauss</strong> lega il <mark class="key-term">flusso netto uscente</mark> alla somma algebrica delle cariche racchiuse. Una carica esterna può cambiare E in ogni punto senza cambiare il totale. Per un campo uniforme che attraversa una scatola vuota, i contributi entranti e uscenti si compensano.</p>
+<p>La legge di Gauss vale per qualunque <mark class="key-term">superficie chiusa</mark> ben definita che non attraversi le sorgenti puntiformi. Per trovare E da Φ serve anche un argomento di simmetria. Per una sfera centrata su una singola carica positiva, E è radiale e ha lo stesso modulo su tutta la sfera. Si ottiene E · 4πr² = Q/ε₀ e quindi la legge dell’inverso del quadrato.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><msub><mi>Φ</mi><mtext>piano</mtext></msub><mo>=</mo><mi>E</mi><mi>A</mi><mo>·</mo><mi mathvariant="normal">cos</mi><mi>θ</mi></math>
 <p>Piano in campo uniforme. θ si misura rispetto alla normale orientata.</p>
 </div>
 <div class="equation-tile"><math display="block"><msub><mi>Φ</mi><mtext>chiusa</mtext></msub><mo>=</mo><mfrac><msub><mi>Q</mi><mtext>int</mtext></msub><msub><mi>ε</mi><mn>0</mn></msub></mfrac></math>
-<p>Flusso totale uscente attraverso una superficie chiusa. Somma algebrica delle cariche interne.</p>
+<p>Flusso totale uscente attraverso una <mark class="key-term">superficie chiusa</mark>. Somma algebrica delle cariche interne.</p>
 </div>
 </div>
 </section>
@@ -623,11 +907,10 @@
 </article>
 </section>
 <section class="sheet lesson" id="lezione-3">
-<p class="kicker">Lezione 3</p>
+<header class="lesson-heading"><p class="kicker">Lezione 3</p>
 <h2>Quanto costa montare tre cariche?</h2>
-<p class="goal">Energia potenziale di coppia e di sistema · Calcolare U sommando ogni coppia una volta, con distanze e segni corretti.</p>
+<p class="goal">Energia potenziale di coppia e di sistema · Calcolare U sommando ogni coppia una volta, con distanze e segni corretti.</p></header>
 <div class="screen">
-<p class="book">Cap. 18, pp. 44–45</p>
 <div class="question">
 <h3>Prima di calcolare</h3>
 <p>Tre cariche arrivano da molto lontano. Se cambi l’ordine in cui le porti ai vertici, il lavoro esterno totale cambia?</p><label class="screen">Prevedi il segno dell’energia per due cariche opposte. Per il triangolo, elenca prima tutte le coppie.<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
@@ -640,13 +923,15 @@
 </form><svg viewBox="0 0 660 300" role="img" aria-label="Tre cariche ai vertici di un triangolo"></svg><output aria-live="polite"></output>
 <p class="book">Le lunghezze numeriche sono calcolate dalla geometria del triangolo. Il disegno è schematico.</p><noscript>Per interagire con il modello abilita JavaScript.</noscript>
 </div>
-<h3>Formalizziamo</h3>
+<h3 id="teoria-3">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 18, pp. 44–45 · Energia di una coppia e di più cariche.</span><span class="theory-aside">A p. 45, esempio 1 sulle tre coppie.</span>
+</p>
 <div class="theory-expanded">
-<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/44.png">p. 44 · Energia di una coppia</a> · <a target="_blank" rel="noopener" href="immagini/66.png">p. 66 · Conteggio delle coppie</a>
+<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/44.png">p. 44 · Energia di una coppia</a> · p. 45 · Assemblaggio di tre cariche · <a target="_blank" rel="noopener" href="immagini/66.png">p. 66 · Conteggio delle coppie</a>
 </p>
 <section class="theory-cycle">
 <h4>Una coppia, due segni e uno zero</h4>
-<p>Per due cariche puntiformi nel vuoto scegli U = 0 quando la distanza tende all’infinito. <strong>U è l’energia associata alla configurazione</strong>. Coincide con il lavoro esterno necessario per costruire lentamente la coppia partendo da molto lontano. Se le cariche sono concordi, per avvicinarle devi vincere la repulsione e U è positiva. Se sono discordi, durante l’avvicinamento il campo compie lavoro positivo e l’agente esterno trattiene le cariche. U è negativa.</p>
+<p>Per due cariche puntiformi nel vuoto scegli U = 0 quando la <mark class="key-term">distanza tende all’infinito</mark>. <strong>U è l’energia associata alla configurazione</strong>. Coincide con il lavoro esterno necessario per costruire lentamente la coppia partendo da molto lontano. Se le cariche sono concordi, per avvicinarle devi vincere la repulsione e U è positiva. Se sono discordi, durante l’avvicinamento il campo compie lavoro positivo e l’agente esterno trattiene le cariche. U è negativa.</p>
 <p>La legge per U ha r al denominatore. Il modulo della forza ha r². Raddoppiando la distanza si dimezza |U| e si riduce a un quarto il modulo della forza.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><msub><mi>U</mi><mi>12</mi></msub><mo>=</mo><mi>k</mi><mfrac><mrow><msub><mi>q</mi><mn>1</mn></msub><msub><mi>q</mi><mn>2</mn></msub></mrow><msub><mi>r</mi><mn>12</mn></msub></mfrac></math>
@@ -656,8 +941,8 @@
 </section>
 <section class="theory-cycle">
 <h4>Il metodo delle coppie</h4>
-<p>Porta una carica alla volta nella configurazione. La prima non trova altre cariche. La seconda interagisce con la prima. La terza interagisce con entrambe. Ottieni tre contributi, ciascuno con la distanza e il prodotto dei segni della rispettiva coppia.</p>
-<p>Per quattro cariche annota <strong>12, 13, 14, 23, 24, 34</strong>. Se una sola carica cambia posizione, lascia perdere nel confronto i termini che rimangono uguali. Per trovare il lavoro del campo sottrai l’energia finale da quella iniziale.</p>
+<p>Porta una carica alla volta nella configurazione. La prima non trova altre cariche. La seconda interagisce con la prima. La terza interagisce con entrambe. Ottieni <mark class="key-term">tre contributi</mark>, ciascuno con la distanza e il prodotto dei segni della rispettiva coppia.</p>
+<p>Per quattro cariche annota <strong>12, 13, 14, 23, 24, 34</strong>. Se <mark class="key-term">una sola carica cambia posizione</mark>, lascia perdere nel confronto i termini che rimangono uguali. Per trovare il lavoro del campo sottrai l’energia finale da quella iniziale.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><msub><mi><mi>U</mi></mi><mtext>tot</mtext></msub><mo>=</mo><msub><mi>U</mi><mi>12</mi></msub><mo>+</mo><msub><mi>U</mi><mi>13</mi></msub><mo>+</mo><msub><mi>U</mi><mi>23</mi></msub></math>
 <p>Esempio con tre cariche. Ogni coppia compare una sola volta.</p>
@@ -851,11 +1136,10 @@
 </article>
 </section>
 <section class="sheet lesson" id="lezione-4">
-<p class="kicker">Lezione 4</p>
+<header class="lesson-heading"><p class="kicker">Lezione 4</p>
 <h2>Una mappa dei volt</h2>
-<p class="goal">Potenziale, differenza di potenziale, equipotenziali · Passare dal potenziale al lavoro e leggere direzione e intensità del campo da una mappa.</p>
+<p class="goal">Potenziale, differenza di potenziale, equipotenziali · Passare dal potenziale al lavoro e leggere direzione e intensità del campo da una mappa.</p></header>
 <div class="screen">
-<p class="book">Cap. 18, pp. 46–53</p>
 <div class="question">
 <h3>Prima di calcolare</h3>
 <p>Su una mappa quotata, camminare lungo una curva di livello è un po’ come muovere una carica su un’equipotenziale. Che cosa rimane costante? Quali frecce disegneresti sulla mappa?</p><label class="screen">Al centro fra due sorgenti opposte dello stesso modulo prevedi separatamente il segno di V e il verso di E.<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
@@ -868,14 +1152,16 @@
 </form><svg viewBox="0 0 660 300" role="img" aria-label="Curve equipotenziali e vettori di campo"></svg><output aria-live="polite"></output>
 <p class="book">Curve a potenziale negativo tratteggiate in blu, positive in arancio, curva a zero più spessa. I vettori del campo sono in verde e la freccia più spessa indica E in P.</p><noscript>Per interagire con il modello abilita JavaScript.</noscript>
 </div>
-<h3>Formalizziamo</h3>
+<h3 id="teoria-4">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 18 · pp. 46–48 potenziale, differenza di potenziale ed elettronvolt; pp. 49–50 potenziale di cariche puntiformi; pp. 50–51 equipotenziali.</span><span class="theory-aside">Facoltativi · pp. 52–53 (esempio 5) dal potenziale al campo; pp. 53–54 circuitazione.</span>
+</p>
 <div class="theory-expanded">
-<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/46.png">p. 46 · Potenziale e differenza di potenziale</a> · <a target="_blank" rel="noopener" href="immagini/51.png">p. 51 · Equipotenziali e dipolo</a> · <a target="_blank" rel="noopener" href="immagini/52.png">p. 52 · Campo e differenza di potenziale</a>
+<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/46.png">p. 46 · Potenziale e differenza di potenziale</a> · p. 49 · Potenziale di cariche puntiformi · <a target="_blank" rel="noopener" href="immagini/51.png">p. 51 · Equipotenziali e dipolo</a> · <a target="_blank" rel="noopener" href="immagini/52.png">p. 52 · Campo e differenza di potenziale</a>
 </p>
 <section class="theory-cycle">
 <h4>Potenziale, differenza di potenziale ed energia</h4>
-<p>Il <strong>potenziale in P</strong> è l’energia potenziale per unità di carica di prova in P, fissato uno zero. È uno scalare del campo delle sorgenti. Cambiare la carica di prova cambia U in proporzione e lascia V invariato. Se aggiungi la stessa costante a tutti i potenziali, ogni differenza resta uguale.</p>
-<p>La <strong>differenza di potenziale da A a B</strong> è il valore in B meno quello in A. Dice quanta energia potenziale acquista un coulomb di carica positiva. Per risalire al lavoro del campo si cambia segno. Con carica negativa, una differenza di potenziale positiva corrisponde invece a una diminuzione di U.</p>
+<p>Il <strong>potenziale in P</strong> è l’energia potenziale per unità di carica di prova in P, <mark class="key-term">fissato uno zero</mark>. È uno scalare del campo delle sorgenti. Cambiare la carica di prova cambia U in proporzione e lascia V invariato. Se aggiungi la stessa costante a tutti i potenziali, ogni differenza resta uguale.</p>
+<p>La <strong>differenza di potenziale da A a B</strong> è il <mark class="key-term">valore in B meno quello in A</mark>. Dice quanta energia potenziale acquista un coulomb di carica positiva. Per risalire al lavoro del campo si cambia segno. Con carica negativa, una differenza di potenziale positiva corrisponde invece a una diminuzione di U.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><mi>V</mi><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mi>U</mi><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow><msub><mi>q</mi><mn>0</mn></msub></mfrac></math>
 <p>Potenziale in volt, o joule per coulomb. U riguarda la carica di prova nelle sorgenti fissate.</p>
@@ -894,19 +1180,19 @@
 <section class="theory-cycle">
 <h4>Calcolare V da una o più cariche</h4>
 <p>Una sorgente puntiforme nel vuoto produce V = kQ/r scegliendo lo zero all’infinito. Qui il segno di Q rimane nel numeratore. A parità di r, una carica doppia dà un potenziale doppio. A parità di Q, un raggio doppio dimezza il potenziale in valore assoluto.</p>
-<p>Con più sorgenti, calcola una r per ciascuna e somma i termini con segno. E e V possono annullarsi in punti diversi. Nel punto medio di un dipolo simmetrico V = 0, mentre E punta verso la carica negativa. Nel punto medio di due positive identiche E = 0, mentre V è positivo.</p>
+<p>Con più sorgenti, calcola una r per ciascuna e <mark class="key-term">somma i termini con segno</mark>. E e V possono annullarsi in punti diversi. Nel punto medio di un dipolo simmetrico V = 0, mentre E punta verso la carica negativa. Nel punto medio di due positive identiche E = 0, mentre V è positivo.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><mi>V</mi><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow><mo>=</mo><mi>k</mi><mfrac><mi>Q</mi><mi>r</mi></mfrac></math>
 <p>Una sorgente puntiforme nel vuoto. Conserva il segno di Q e scegli V nullo all’infinito.</p>
 </div>
 <div class="equation-tile"><math display="block"><msub><mi><mi>V</mi></mi><mtext>tot</mtext></msub><mo>=</mo><msub><mi>V</mi><mi>1</mi></msub><mo>+</mo><msub><mi>V</mi><mi>2</mi></msub><mo>+</mo><mo>…</mo></math>
-<p>Potenziale totale nel punto P. Somma scalare, con lo stesso riferimento per tutti i contributi.</p>
+<p>Potenziale totale nel punto P. Somma <mark class="key-term">scalare</mark>, con lo stesso riferimento per tutti i contributi.</p>
 </div>
 </div>
 </section>
 <section class="theory-cycle">
 <h4>Leggere le equipotenziali</h4>
-<p>Una <strong>superficie equipotenziale</strong> contiene punti con lo stesso V. Su carta vediamo le sue intersezioni con il piano, cioè le curve di livello. Due punti sulla stessa equipotenziale hanno ΔV = 0 e il lavoro del campo da uno all’altro è zero. Dove E è non nullo, la freccia del campo è perpendicolare alla superficie e punta verso i valori minori. Una carica negativa subisce una forza in verso opposto.</p>
+<p>Una <strong>superficie equipotenziale</strong> contiene punti con lo stesso V. Su carta vediamo le sue intersezioni con il piano, cioè le curve di livello. Due punti sulla stessa equipotenziale hanno ΔV = 0 e il lavoro del campo da uno all’altro è zero. Dove E è non nullo, la freccia del campo è <mark class="key-term">perpendicolare alla superficie</mark> e punta verso i valori minori. Una carica negativa subisce una forza in verso opposto.</p>
 <p>Per una sorgente isolata le superfici sono sfere concentriche. Tra armature piane ideali sono piani paralleli. In un conduttore in equilibrio elettrostatico il campo nel metallo è zero e il potenziale è costante. Appena fuori dalla superficie il campo, dove non nullo, è normale alla superficie.</p>
 <p><strong>Leggi la distanza.</strong> Se il salto in volt è uguale fra due coppie di curve, il campo è più intenso dove quelle curve sono più vicine. In campo uniforme il rapporto tra salto e distanza lungo x dà la componente del campo dopo aver invertito il segno. Per il grafico di p. 71, n. 35, questa lettura è facoltativa.</p>
 <div class="equation-grid">
@@ -1152,11 +1438,10 @@
 </article>
 </section>
 <section class="sheet lesson" id="lezione-5">
-<p class="kicker">Lezione 5</p>
+<header class="lesson-heading"><p class="kicker">Lezione 5</p>
 <h2>Come si fa spazio alla carica?</h2>
-<p class="goal">Capacità, armature e dielettrico · Calcolare capacità e carica e identificare quale grandezza rimane fissata.</p>
+<p class="goal">Capacità, armature e dielettrico · Calcolare capacità e carica e identificare quale grandezza rimane fissata.</p></header>
 <div class="screen">
-<p class="book">Cap. 18, pp. 54–57</p>
 <div class="question">
 <h3>Prima di calcolare</h3>
 <p>Un condensatore contiene due armature separate da un isolante. Raddoppiare la distanza fa raddoppiare o dimezzare la capacità? Che cosa cambia se è ancora collegato alla batteria?</p><label class="screen">Completa due righe prima di usare il modello: «collegato, resta costante…» e «isolato dopo il distacco, resta costante…».<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
@@ -1169,13 +1454,15 @@
 </form><svg viewBox="0 0 660 300" role="img" aria-label="Condensatore piano e armature"></svg><output aria-live="polite"></output>
 <p class="book">Stato iniziale di riferimento per l’isolamento: A = 100 cm², d = 1 mm, vuoto, Vc = 12 V. La distanza nel disegno è indicativa.</p><noscript>Per interagire con il modello abilita JavaScript.</noscript>
 </div>
-<h3>Formalizziamo</h3>
+<h3 id="teoria-5">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 18, pp. 54–56 · Capacità, condensatore piano e dielettrico.</span><span class="theory-aside">p. 57, esempio 7 · Applicazione alla tastiera.</span>
+</p>
 <div class="theory-expanded">
-<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/54.png">p. 54 · Capacità</a> · <a target="_blank" rel="noopener" href="immagini/73.png">p. 73 · Modello della membrana</a>
+<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/54.png">p. 54 · Capacità</a> · p. 56 · Condensatore piano e dielettrico · <a target="_blank" rel="noopener" href="immagini/73.png">p. 73 · Modello della membrana</a>
 </p>
 <section class="theory-cycle">
 <h4>Che cos’è la capacità</h4>
-<p>Due conduttori separati da vuoto o da un isolante formano un condensatore. Nel modello con armature a cariche opposte, <strong>Q è il modulo della carica di una sola armatura</strong>. Vc indica il modulo della differenza di potenziale fra le due armature. La capacità esprime il rapporto carica per volt. Per geometria e mezzo lineare fissati, Q cresce in proporzione alla tensione.</p>
+<p>Due conduttori separati da vuoto o da un isolante formano un condensatore. Nel modello con armature a cariche opposte, <strong>Q è il modulo della carica di una sola armatura</strong>. Vc indica il <mark class="key-term">modulo della differenza di potenziale</mark> fra le due armature. La capacità esprime il rapporto carica per volt. Per geometria e mezzo lineare fissati, Q cresce in proporzione alla tensione.</p>
 <p>Attenzione ai prefissi. Un microfarad equivale a 10⁻⁶ F, un nanofarad a 10⁻⁹ F, un picofarad a 10⁻¹² F. Se l’area è data in cm² devi usare 1 cm² = 10⁻⁴ m². Per un singolo conduttore isolato, il libro introduce anche C = Q/V rispetto all’infinito. In un condensatore il riferimento è tra due conduttori.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><mi>C</mi><mo>=</mo><mfrac><mi>Q</mi><msub><mi>V</mi><mi>c</mi></msub></mfrac></math>
@@ -1185,20 +1472,20 @@
 </section>
 <section class="theory-cycle">
 <h4>Perché area, distanza e dielettrico contano</h4>
-<p>Nel modello piano le armature sono vicine rispetto alle loro dimensioni laterali e si trascurano gli effetti dei bordi. L’area più grande consente più carica a parità di tensione. Una distanza maggiore aumenta la tensione per la stessa carica, quindi riduce C. Un dielettrico lineare che riempie lo spazio si polarizza e aumenta la capacità per un fattore εᵣ rispetto al vuoto.</p>
+<p>Nel modello piano le armature sono vicine rispetto alle loro dimensioni laterali e si trascurano gli <mark class="key-term">effetti dei bordi</mark>. L’area più grande consente più carica a parità di tensione. Una distanza maggiore aumenta la tensione per la stessa carica, quindi riduce C. Un dielettrico lineare che riempie lo spazio si polarizza e aumenta la capacità per un fattore εᵣ rispetto al vuoto.</p>
 <p>Tra le piastre, lontano dai bordi, il campo è pressoché uniforme. Va dalla piastra positiva alla negativa. Per il suo modulo si usa il rapporto fra Vc e distanza.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><mi>C</mi><mo>=</mo><mfrac><mrow><msub><mi>ε</mi><mi>r</mi></msub><msub><mi>ε</mi><mn>0</mn></msub><mi>A</mi></mrow><mi>d</mi></mfrac></math>
-<p>Piastre piane con bordi trascurabili. Il dielettrico lineare riempie lo spazio. Nel vuoto εᵣ = 1.</p>
+<p>Piastre piane con bordi trascurabili. Il <mark class="key-term">dielettrico lineare</mark> riempie lo spazio. Nel vuoto εᵣ = 1.</p>
 </div>
 <div class="equation-tile"><math display="block"><mi>E</mi><mo>≈</mo><mfrac><msub><mi>V</mi><mi>c</mi></msub><mi>d</mi></mfrac></math>
-<p>Modulo del campo nella zona centrale di un condensatore piano. La direzione è perpendicolare alle piastre.</p>
+<p>Modulo del campo nella zona centrale di un <mark class="key-term">condensatore piano</mark>. La direzione è perpendicolare alle piastre.</p>
 </div>
 </div>
 </section>
 <section class="theory-cycle">
 <h4>Due esperimenti che partono dallo stesso stato</h4>
-<p>Con la batteria ideale collegata, <strong>Vc resta fissata</strong> e può fluire carica. Con il condensatore scollegato e isolato, <strong>Q resta fissata</strong> e la tensione può cambiare. Se C raddoppia, nel primo caso raddoppia Q. Nel secondo caso Vc si dimezza. Verifica i due esiti nello stesso modello interattivo.</p>
+<p>Con la batteria ideale collegata, <strong>Vc resta fissata</strong> e può fluire carica. Con il condensatore scollegato e isolato, <strong>Q resta fissata</strong> e la tensione può cambiare. Se C raddoppia, nel primo caso <mark class="key-term">raddoppia Q</mark>. Nel secondo caso Vc si dimezza. Verifica i due esiti nello stesso modello interattivo.</p>
 </section>
 </div><aside class="story">
 <h4>Una bottiglia che accumula carica</h4>
@@ -1401,11 +1688,10 @@
 </article>
 </section>
 <section class="sheet lesson" id="lezione-6">
-<p class="kicker">Lezione 6</p>
+<header class="lesson-heading"><p class="kicker">Lezione 6</p>
 <h2>Dove finisce l’energia?</h2>
-<p class="goal">Energia del condensatore, sintesi e autoverifica · Calcolare l’energia immagazzinata e scegliere la relazione più adatta in problemi misti.</p>
+<p class="goal">Energia del condensatore, sintesi e autoverifica · Calcolare l’energia immagazzinata e scegliere la relazione più adatta in problemi misti.</p></header>
 <div class="screen">
-<p class="book">Cap. 18, pp. 57–58 e p. 78</p>
 <div class="question">
 <h3>Prima di calcolare</h3>
 <p>Per trasferire l’ultima porzione di carica a un condensatore serve lo stesso lavoro per coulomb che per trasferire la prima?</p><label class="screen">Disegna a mano il grafico fra carica accumulata e differenza di potenziale. Prevedi se l’energia corrisponde al rettangolo QV o a metà.<textarea rows="2"></textarea></label><span class="print-line" aria-hidden="true"></span><span class="print-line" aria-hidden="true"></span>
@@ -1417,14 +1703,16 @@
 <form><label>Capacità C (μF) <input name="c" type="range" min="5" max="50" step="5" value="20"> <span class="range-value" aria-hidden="true">20</span></label><label>Tensione Vc (V) <input name="v" type="range" min="2" max="30" step="2" value="12"> <span class="range-value" aria-hidden="true">12</span></label><button type="reset">Ripristina valori</button>
 </form><svg viewBox="0 0 660 300" role="img" aria-label="Grafico tensione–carica con triangolo dell’energia"></svg><output aria-live="polite"></output><noscript>Per interagire con il modello abilita JavaScript.</noscript>
 </div>
-<h3>Formalizziamo</h3>
+<h3 id="teoria-6">Formalizziamo</h3>
+<p class="book lesson-theory"><b>Teoria nel Cutnell</b><span class="theory-main">Cap. 18, pp. 57–58 · Energia immagazzinata e applicazione al flash.</span><span class="theory-aside">A p. 57 inizia dal paragrafo sull’energia. L’autoverifica del libro è a p. 78.</span>
+</p>
 <div class="theory-expanded">
-<p class="book theory-refs"><a target="_blank" rel="noopener" href="immagini/58.png">p. 58 · Energia, flash e Millikan</a>
+<p class="book theory-refs">p. 57 · Inizio della teoria sull’energia · <a target="_blank" rel="noopener" href="immagini/58.png">p. 58 · Energia, flash e Millikan</a>
 </p>
 <section class="theory-cycle">
 <h4>Perché compare un mezzo</h4>
-<p>All’inizio della carica, la tensione è zero. Durante il processo cresce con la carica presente sulle piastre. Incrementi uguali di carica richiedono lavori più grandi man mano che il potenziale cresce. Con C costante, il grafico di V in funzione di Q è una retta che parte dall’origine. Il lavoro di carica ideale è l’area del triangolo: base Q per altezza Vc, diviso due.</p>
-<p>La stessa conclusione si ottiene usando la tensione media durante il trasferimento della carica, Vc/2. L’energia resta associata al campo elettrico del condensatore. Nel modello in cui tutta l’energia si libera in un breve intervallo, la potenza media vale energia divisa per durata.</p>
+<p>All’inizio della carica, la tensione è zero. Durante il processo cresce con la carica presente sulle piastre. Incrementi uguali di carica richiedono lavori più grandi man mano che il potenziale cresce. Con C costante, il grafico di V in funzione di Q è una retta che parte dall’origine. Il lavoro di carica ideale è l’<mark class="key-term">area del triangolo</mark>: base Q per altezza Vc, diviso due.</p>
+<p>La stessa conclusione si ottiene usando la <mark class="key-term">tensione media</mark> durante il trasferimento della carica, Vc/2. L’energia resta associata al campo elettrico del condensatore. Nel modello in cui tutta l’energia si libera in un breve intervallo, la potenza media vale energia divisa per durata.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><msub><mi>U</mi><mtext>cap</mtext></msub><mo>=</mo><mfrac><mrow><mi>Q</mi><msub><mi>V</mi><mi>c</mi></msub></mrow><mn>2</mn></mfrac></math>
 <p>Area sotto il grafico V–Q, se la capacità è costante.</p>
@@ -1434,7 +1722,7 @@
 <section class="theory-cycle">
 <h4>Tre forme, un solo bilancio</h4>
 <p>Parti da U = QVc/2. Sostituendo Q = CVc trovi la forma con tensione e capacità. Sostituendo Vc = Q/C trovi la forma con carica e capacità. Stai descrivendo lo stesso stato del condensatore in tre modi.</p>
-<p>Se cambi geometria a <strong>tensione fissa</strong>, U è direttamente proporzionale a C. A <strong>carica fissa</strong>, U è inversamente proporzionale a C. Il bilancio completo può comprendere lavoro meccanico e scambio di energia con la batteria oltre alla variazione dell’energia immagazzinata.</p>
+<p>Se cambi geometria a <strong>tensione fissa</strong>, U è direttamente proporzionale a C. A <strong>carica fissa</strong>, U è <mark class="key-term">inversamente proporzionale a C</mark>. Il bilancio completo può comprendere lavoro meccanico e scambio di energia con la batteria oltre alla variazione dell’energia immagazzinata.</p>
 <div class="equation-grid">
 <div class="equation-tile"><math display="block"><msub><mi>U</mi><mtext>cap</mtext></msub><mo>=</mo><mfrac><mrow><mi>C</mi><msup><msub><mi>V</mi><mi>c</mi></msub><mn>2</mn></msup></mrow><mn>2</mn></mfrac></math>
 <p>Scegli questa forma se conosci C e la tensione. Utile anche se la batteria fissa Vc.</p>
@@ -1446,7 +1734,7 @@
 </section>
 <section class="theory-cycle">
 <h4>Controllo in una riga</h4>
-<p>A C fissa, passare da 10 V a 20 V raddoppia Q e quadruplica U. A Q fissa, dimezzare C raddoppia la tensione e raddoppia U. Scrivi prima che cosa resta fisso, poi scegli la formula.</p>
+<p>A C fissa, passare da 10 V a 20 V raddoppia Q e quadruplica U. A Q fissa, dimezzare C raddoppia la tensione e raddoppia U. Scrivi prima <mark class="key-term">che cosa resta fisso</mark>, poi scegli la formula.</p>
 </section>
 </div><aside class="story">
 <h4>Il lampo e la goccia</h4>
@@ -1619,18 +1907,37 @@
 <h2>Mappa concettuale</h2>
 </div><a class="pill-link" href="#formulario">Apri il formulario</a>
 </div>
-<ol class="concept-chain" aria-label="Dalle sorgenti all’energia">
-<li><a href="#lezione-2">Sorgenti</a>
-</li>
-<li><a href="#lezione-2">Campo E</a>
-</li>
-<li><a href="#lezione-1">Forza e lavoro</a>
-</li>
-<li><a href="#lezione-3">Variazione di U</a>
-</li>
-<li><a href="#lezione-4">Differenza di V</a>
-</li>
-</ol>
+<figure class="concept-figure">
+<div class="concept-viewport" role="region" aria-label="Diagramma navigabile dei concetti" tabindex="0">
+<svg class="concept-diagram" viewBox="0 0 1100 524" role="group" aria-labelledby="concept-title concept-description">
+<title id="concept-title">Dalle cariche sorgenti al campo, al potenziale e all’energia</title>
+<desc id="concept-description">Dalle cariche sorgenti si ricavano il campo, il potenziale e l’energia del sistema. Dal campo si passa al flusso o alla forza e al lavoro. Dal potenziale si passa alle equipotenziali e alla differenza di potenziale, che permette di calcolare la variazione di energia e di descrivere il condensatore. Ogni riquadro apre la lezione corrispondente.</desc>
+<defs><marker id="concept-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 10 5 0 10Z"/></marker></defs>
+<g class="concept-edges" aria-hidden="true"><path d="M550 72 V94 H210 V116" marker-end="url(#concept-arrow)"/>
+<path d="M550 72 V116" marker-end="url(#concept-arrow)"/>
+<path d="M550 72 V94 H888 V116" marker-end="url(#concept-arrow)"/>
+<path d="M210 179 V205 H115 V231" marker-end="url(#concept-arrow)"/>
+<path d="M210 179 V205 H335 V231" marker-end="url(#concept-arrow)"/>
+<path d="M550 179 V231" marker-end="url(#concept-arrow)"/>
+<path d="M550 179 V205 H872 V231" marker-end="url(#concept-arrow)"/>
+<path d="M335 294 V346" marker-end="url(#concept-arrow)"/>
+<path d="M550 294 V346" marker-end="url(#concept-arrow)"/>
+<path d="M550 294 V320 H872 V346" marker-end="url(#concept-arrow)"/>
+<path d="M872 409 V445" marker-end="url(#concept-arrow)"/></g>
+<a href="#lezione-2" class="concept-node source" aria-label="Cariche sorgenti. Segno, valore e posizione. Vai alla lezione 2."><rect x="421" y="14" width="258" height="58" rx="10"/><text class="concept-name" x="550" y="38">Cariche sorgenti</text><text class="concept-detail" x="550" y="58">Segno, valore e posizione</text></a>
+<a href="#lezione-2" class="concept-node field" aria-label="Campo elettrico E. Somma vettoriale. Vai alla lezione 2."><rect x="88" y="121" width="244" height="58" rx="10"/><text class="concept-name" x="210" y="145">Campo elettrico E</text><text class="concept-detail" x="210" y="165">Somma vettoriale</text></a>
+<a href="#lezione-4" class="concept-node potential" aria-label="Potenziale elettrico V. Somma scalare. Vai alla lezione 4."><rect x="428" y="121" width="244" height="58" rx="10"/><text class="concept-name" x="550" y="145">Potenziale elettrico V</text><text class="concept-detail" x="550" y="165">Somma scalare</text></a>
+<a href="#lezione-3" class="concept-node energy" aria-label="Energia U del sistema. Somma delle energie di coppia. Vai alla lezione 3."><rect x="766" y="121" width="244" height="58" rx="10"/><text class="concept-name" x="888" y="145">Energia U del sistema</text><text class="concept-detail" x="888" y="165">Somma delle energie di coppia</text></a>
+<a href="#lezione-2" class="concept-node field" aria-label="Flusso Φ e Gauss. Carica racchiusa nella superficie. Vai alla lezione 2."><rect x="14" y="236" width="202" height="58" rx="10"/><text class="concept-name" x="115" y="260">Flusso Φ e Gauss</text><text class="concept-detail" x="115" y="280">Carica racchiusa nella superficie</text></a>
+<a href="#lezione-1" class="concept-node field" aria-label="Forza elettrica. F = q₀E, come vettori. Vai alla lezione 1."><rect x="231" y="236" width="208" height="58" rx="10"/><text class="concept-name" x="335" y="260">Forza elettrica</text><text class="concept-detail" x="335" y="280">F = q₀E, come vettori</text></a>
+<a href="#lezione-4" class="concept-node potential" aria-label="Differenza ΔV. Potenziale finale − iniziale. Vai alla lezione 4."><rect x="448" y="236" width="204" height="58" rx="10"/><text class="concept-name" x="550" y="260">Differenza ΔV</text><text class="concept-detail" x="550" y="280">Potenziale finale − iniziale</text></a>
+<a href="#lezione-4" class="concept-node potential" aria-label="Equipotenziali. Stesso V, lavoro elettrico nullo. Vai alla lezione 4."><rect x="756" y="236" width="232" height="58" rx="10"/><text class="concept-name" x="872" y="260">Equipotenziali</text><text class="concept-detail" x="872" y="280">Stesso V, lavoro elettrico nullo</text></a>
+<a href="#lezione-1" class="concept-node energy" aria-label="Lavoro W del campo. W = −ΔU. Vai alla lezione 1."><rect x="231" y="351" width="208" height="58" rx="10"/><text class="concept-name" x="335" y="375">Lavoro W del campo</text><text class="concept-detail" x="335" y="395">W = −ΔU</text></a>
+<a href="#lezione-4" class="concept-node energy" aria-label="Variazione ΔU. ΔU = q₀ΔV. Vai alla lezione 4."><rect x="448" y="351" width="204" height="58" rx="10"/><text class="concept-name" x="550" y="375">Variazione ΔU</text><text class="concept-detail" x="550" y="395">ΔU = q₀ΔV</text></a>
+<a href="#lezione-5" class="concept-node potential" aria-label="Capacità C. C = Q / |ΔV|. Vai alla lezione 5."><rect x="756" y="351" width="232" height="58" rx="10"/><text class="concept-name" x="872" y="375">Capacità C</text><text class="concept-detail" x="872" y="395">C = Q / |ΔV|</text></a>
+<a href="#lezione-6" class="concept-node energy" aria-label="Energia immagazzinata. U = ½ C |ΔV|². Vai alla lezione 6."><rect x="756" y="450" width="232" height="58" rx="10"/><text class="concept-name" x="872" y="474">Energia immagazzinata</text><text class="concept-detail" x="872" y="494">U = ½ C |ΔV|²</text></a>
+</svg></div>
+<figcaption>Seleziona un riquadro per aprire la lezione corrispondente.</figcaption></figure>
 <div class="atlas-map">
 <article class="map-node">
 <p class="map-from">Cariche sorgenti</p>
